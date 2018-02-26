@@ -378,8 +378,8 @@ blockquote:before {
   }
 
   .post-list li {
-    width: calc(50% - 2px);
-    display: inline-block;
+   /* width: calc(50% - 2px);
+    display: inline-block;*/
   }
 
   .header-1 li:first-of-type {
