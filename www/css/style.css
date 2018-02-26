@@ -109,6 +109,10 @@ blockquote:before {
   width: 50px;
 }
 
+.navbar, .subnavbar, .toolbar {
+    background-color: #00A4C4 !important;
+}
+
 /************** 3. Panel *************/
 
 .panel-content {

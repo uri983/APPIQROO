@@ -13,3 +13,7 @@
 .statusbar-overlay {
     background: #000000;
 }
+
+.navbar, .subnavbar, .toolbar {
+    background-color: #00A4C4 !important;
+}
