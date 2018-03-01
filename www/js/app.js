@@ -20,6 +20,57 @@ var mainView = app.addView('.view-main', {
 $$(document).on('DOMContentLoaded', function (e) {
 
   // JS code here ...
+             $$.ajax({
+                url: 'http://servicios.apiqroo.com.mx/appiqroo_service/home/getNews',
+                method: 'POST',
+                dataType: 'json',
+                success: function(response){
+                  console.log(response);
+                  var html = " <li>";
+                  html+= "<a href=\"post.html\">";
+                  html+=  "<div class=\"post\">";
+                  html+=    "<div class=\"post-image\">";
+                  html+=      "<img alt=\"\" src=\""+response.data[0].img+"\">";
+                  html+=   "</div>";
+                  html+=    "<div class=\"post-details\">";
+                  html+=      "<div class=\"post-category\">Noticias</div><div class=\"post-publication\">"+response.data[0].post_date+"</div>";
+                  html+=      "<div class=\"post-title\">";
+                  html+=        "<h2 class=\"post-title-content\">"+response.data[0].post_title+"</h2>";
+                  html+=      "</div>";
+                  html+=    "</div>";
+                  html+=  "</div>";
+                  html+="</a>";
+                  html+="</li>";
+                  var count = Object.keys(response.data).length;
+                  console.log(count);
+                  for (var j = 1; j < count; j++) {
+                      console.log(response.data[j]);
+                      html+=  "<li>";
+                      html+=   "<a href=\"post.html\">";
+                      html+=     "<div class=\"post\">";
+                      html+=       "<div class=\"post-image\">";
+                       html+=        "<img alt=\"\" src=\""+response.data[j].img+"\">";
+                       html+=      "</div>";
+                       html+=      "<div class=\"post-details\">";
+                       html+=        "<div class=\"post-category\">Noticias</div>";
+                       html+=        "<h2 class=\"post-title-content\">"+response.data[j].post_title+"</h2>";
+                       html+=       "<div class=\"post-publication\">"+response.data[j].post_date+"</div>";
+                        html+=     "</div>";
+                        html+=   "</div>";
+                        html+="</a>";
+                       html+=  "</li>";
+                  }
+
+                 
+
+                  $('#news').html(html);
+                  
+                },
+                error: function(xhr, status){
+                  alert('Error: '+JSON.stringify(xhr));
+                  alert('ErrorStatus: '+JSON.stringify(status));
+                }
+              });
 
 });
 

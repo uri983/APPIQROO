@@ -374,7 +374,7 @@ blockquote:before {
 @media only screen and (min-device-width : 768px) and (max-device-width : 1366px) {
 
   .header-1 li:first-child .post-image img {
-    height: 300px;
+    height: 250px;
   }
 
   .post-list li {
@@ -489,6 +489,10 @@ blockquote:before {
 .speed-dial .floating-button i {
   font-size: 20px;
 }
+
+.floating-button {
+    background-color: #e94492;
+  }
 
 /* For devices < iPhone 6 */
 @media only screen and (max-device-width : 375px) {
