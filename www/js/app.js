@@ -14,74 +14,41 @@ var mainView = app.addView('.view-main', {
   dynamicNavbar: true
 })
 
-
+/*********************************
+*      Eventos de APP            *
+*                                *
+**********************************/
 ////////// CUSTOM JS ON HOME PAGE //////////
 
 $$(document).on('DOMContentLoaded', function (e) {
 
-  // JS code here ...
-             $$.ajax({
-                url: 'http://servicios.apiqroo.com.mx/appiqroo_service/home/getNews',
-                method: 'POST',
-                dataType: 'json',
-                success: function(response){
-                  console.log(response);
-                  var html = " <li>";
-                  html+= "<a href=\"post.html\">";
-                  html+=  "<div class=\"post\">";
-                  html+=    "<div class=\"post-image\">";
-                  html+=      "<img alt=\"\" src=\""+response.data[0].img+"\">";
-                  html+=   "</div>";
-                  html+=    "<div class=\"post-details\">";
-                  html+=      "<div class=\"post-category\">Noticias</div><div class=\"post-publication\">"+response.data[0].post_date+"</div>";
-                  html+=      "<div class=\"post-title\">";
-                  html+=        "<h2 class=\"post-title-content\">"+response.data[0].post_title+"</h2>";
-                  html+=      "</div>";
-                  html+=    "</div>";
-                  html+=  "</div>";
-                  html+="</a>";
-                  html+="</li>";
-                  var count = Object.keys(response.data).length;
-                  console.log(count);
-                  for (var j = 1; j < count; j++) {
-                      console.log(response.data[j]);
-                      html+=  "<li>";
-                      html+=   "<a href=\"post.html\">";
-                      html+=     "<div class=\"post\">";
-                      html+=       "<div class=\"post-image\">";
-                       html+=        "<img alt=\"\" src=\""+response.data[j].img+"\">";
-                       html+=      "</div>";
-                       html+=      "<div class=\"post-details\">";
-                       html+=        "<div class=\"post-category\">Noticias</div>";
-                       html+=        "<h2 class=\"post-title-content\">"+response.data[j].post_title+"</h2>";
-                       html+=       "<div class=\"post-publication\">"+response.data[j].post_date+"</div>";
-                        html+=     "</div>";
-                        html+=   "</div>";
-                        html+="</a>";
-                       html+=  "</li>";
-                  }
+  listNews();
 
-                 
+})
 
-                  $('#news').html(html);
-                  
-                },
-                error: function(xhr, status){
-                  alert('Error: '+JSON.stringify(xhr));
-                  alert('ErrorStatus: '+JSON.stringify(status));
-                }
-              });
-
+$$(document).on('deviceready', function() {
+  
 });
-
 
 ////////// CUSTOM JS ON OTHER PAGES //////////
 
-$$(document).on('page:init', function (e) {
+$$(document).on('page:index', function (e) {
 
-  // JS code here ...
+  
 
 });
+
+app.onPageInit('about', function (page) {
+    // Do something here for "about" page
+     alert('about');
+});
+
+
+app.onPageInit('post', function (page) {
+    // Do something here for "about" page
+    getNewsDetail(page.query.news_id);
+})
+
 
 
 /* ALL OF THE CODE BELOW IS FOR THE DEMO FEATURES, YOU CAN DELETE IT */
@@ -196,3 +163,91 @@ $$('.notification-search').on('click', function () {
         message: 'Try to type something in the search field to dynamically search into the post list (eg. Music)',
     });
 });
+
+/*********************************
+*      Funcionalidades           *
+*                                *
+**********************************/
+function getNewsDetail(news_id){
+
+    $$.ajax({
+                url: 'http://servicios.apiqroo.com.mx/appiqroo_service/home/getNewsbyId/',
+                method: 'POST',
+                dataType: 'json',
+                data:{'new_id':news_id},
+                success: function(response){
+                 
+                  var res = response.data[0].post_content.replace(/\[.*?\]\s?/g, '')
+                 $('.post-date').html(response.data[0].post_date);
+                  $('#post-content').html(jQuery(res).text());
+                  $('#post-title').html(response.data[0].post_title);
+                  $("#post-img").attr("src",response.data[0].img);
+                  
+                  
+                  
+                },
+                error: function(xhr, status){
+                  alert('Error: '+JSON.stringify(xhr));
+                  alert('ErrorStatus: '+JSON.stringify(status));
+                }
+    });
+
+    
+
+}
+
+
+function listNews(){
+
+    $$.ajax({
+                url: 'http://servicios.apiqroo.com.mx/appiqroo_service/home/getNews/',
+                method: 'POST',
+                dataType: 'json',
+                success: function(response){
+                  //console.log(response);
+                  var html = " <li>";
+                  html+= "<a href=\"post.html?news_id="+response.data[0].ID+"\">";
+                  html+=  "<div class=\"post\">";
+                  html+=    "<div class=\"post-image\">";
+                  html+=      "<img alt=\"\" src=\""+response.data[0].img+"\">";
+                  html+=   "</div>";
+                  html+=    "<div class=\"post-details\">";
+                  html+=      "<div class=\"post-category\">Noticias</div><div class=\"post-publication\">"+response.data[0].post_date+"</div>";
+                  html+=      "<div class=\"post-title\">";
+                  html+=        "<h2 class=\"post-title-content\">"+response.data[0].post_title+"</h2>";
+                  html+=      "</div>";
+                  html+=    "</div>";
+                  html+=  "</div>";
+                  html+="</a>";
+                  html+="</li>";
+                  var count = Object.keys(response.data).length;
+                  //console.log(count);
+                  for (var j = 1; j < count; j++) {
+                      //console.log(response.data[j]);
+                      html+=  "<li>";
+                      html+=   "<a href=\"post.html?news_id="+response.data[j].ID+"\">";
+                      html+=     "<div class=\"post\">";
+                      html+=       "<div class=\"post-image\">";
+                       html+=        "<img alt=\"\" src=\""+response.data[j].img+"\">";
+                       html+=      "</div>";
+                       html+=      "<div class=\"post-details\">";
+                       html+=        "<div class=\"post-category\">Noticias</div>";
+                       html+=        "<h2 class=\"post-title-content\">"+response.data[j].post_title+"</h2>";
+                       html+=       "<div class=\"post-publication\">"+response.data[j].post_date+"</div>";
+                        html+=     "</div>";
+                        html+=   "</div>";
+                        html+="</a>";
+                       html+=  "</li>";
+                  }
+
+                 
+
+                  $('#news').html(html);
+                  
+                },
+                error: function(xhr, status){
+                  alert('Error: '+JSON.stringify(xhr));
+                  alert('ErrorStatus: '+JSON.stringify(status));
+                }
+              });
+        }

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,7 +15,7 @@
   <body>
     <!-- Status bar overlay for full screen mode (PhoneGap/Cordova) -->
     <div class="statusbar-overlay"></div>
-    <div class="page navbar-fixed post-single">
+    <div  data-page="post" class="page navbar-fixed post-single">
       <!-- Navbar -->
       <div class="navbar">
         <div class="navbar-inner">
@@ -27,7 +28,7 @@
       <!-- Scrollable page content -->
       <div class="page-content">
         <div class="image-header">
-          <img alt="" src="img/img-new.jpeg">
+          <img alt="" id="post-img" src="img/img-new.jpeg">
           <!-- Floating button -->
           <div class="speed-dial">
            <a href="#" class="floating-button">
@@ -50,18 +51,11 @@
         </div>
         <div class="content-block">
           <div class="header">
-            <div class="post-category">Isla Mujeres</div><div class="post-date">25 Febrero 2018</div>
-            <h1>Apiqroo organiza jornada de limpieza en el polígono B del Recinto Portuario de Isla Mujeres</h1>
+            <div class="post-category">Noticias</div><div class="post-date">Cargando fecha ...</div>
+            <h1 id="post-title">Cargando ...</h1>
           </div>
           <div class="post-content">
-            <p style="text-align: justify;">La directora de la  Administración Portuaria Integral de Quintana Roo (Apiqroo), Alicia Ricalde Magaña, informó que  con el apoyo de elementos de la Quinta Región Naval, personal de la Comisión Nacional de Áreas Naturales Protegidas (Conanp), además de la Capitanía de Puerto, se llevó a cabo una jornada de limpieza en un área de 800 metros del polígono B del Recinto Portuario de Isla Mujeres.
-En los trabajos de limpieza que iniciaron a las siete treinta de la mañana, participaron alrededor de 35 personas, quienes levantaron más de 9 toneladas de todo tipo desechos como botellas de plástico, bolsas, vidrios, colillas de cigarro,  neveras, algún congelador, motores, aceites, entre otros artículos.
-
-La funcionaria estatal informó que como parte de las mismas acciones, Apiqroo inició el retiro de embarcaciones  abandonadas en la zona federal, pues el uso y disfrute de las zonas turísticas por parte de visitantes y locales, es una prioridad del gobernador Carlos Joaquín González
-
-Sobre el particular, Rosa Elena Ríos Fernández, Coordinadora de la APIQROO en Isla Mujeres, indicó que desde inicio de semana pegaron  avisos en cada una de las embarcaciones para informar a los propietarios que tendrían que retirarlas de la zona federal y colocarlas a la orilla del Mar, correctamente amarradas,  apegándose a los lineamientos que marca la Administración Portuaria.
-
-La coordinadora  señaló que estas acciones permitirán contar con una ventana más al mar, así como crear una mayor conciencia entre la ciudadanía de mantener limpias las playas y una buena imagen turística del destino, considerado como Pueblo Mágico..</p>
+            <p id="post-content" style="text-align: justify;">Cargando .....</p>
           </div>
           <div class="post-share buttons-row">
             <a href="#" class="button button-fill button-raised facebook"><i class="icon ion-social-facebook"></i>Facebook</a>
@@ -69,99 +63,7 @@ La coordinadora  señaló que estas acciones permitirán contar con una ventana 
             <a href="#" class="button button-fill button-raised twitter"><i class="icon ion-social-twitter"></i>Twitter</a>
           </div>
         </div>
-        <div class="post-comments">
-          <div class="comment-title">Comments (13)</div>
-          <ul class="comment-list" id="comment-list">
-            <li>
-              <img class="comment-avatar" src="img/avatars/1.jpg" alt="">
-              <div class="comment-details">
-                <span class="comment-author">Amy</span>
-                <span class="comment-date">1h</span>
-                <span class="comment-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</span>
-              </div>
-            </li>
-            <li>
-              <img class="comment-avatar" src="img/avatars/2.jpg" alt="">
-              <div class="comment-details">
-                <span class="comment-author">Jane Laury</span>
-                <span class="comment-date">3h</span>
-                <span class="comment-content">Excepteur sint occaecat cupidatat non proident, sunt in culpa</span>
-              </div>
-            </li>
-            <li>
-              <img class="comment-avatar" src="img/avatars/3.jpg" alt="">
-              <div class="comment-details">
-                <span class="comment-author">Valentin</span>
-                <span class="comment-date">8h</span>
-                <span class="comment-content">This is a comment example. A beautiful comment example.</span>
-              </div>
-            </li>
-            <li>
-              <img class="comment-avatar" src="img/avatars/4.jpg" alt="">
-              <div class="comment-details">
-                <span class="comment-author">James Harden</span>
-                <span class="comment-date">1d</span>
-                <span class="comment-content">Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</span>
-              </div>
-            </li>
-            <li>
-              <img class="comment-avatar" src="img/avatars/5.jpg" alt="">
-              <div class="comment-details">
-                <span class="comment-author">Melania</span>
-                <span class="comment-date">3d</span>
-                <span class="comment-content">Lorem ipsum dolor sit amet, consecte adipisi laborum.</span>
-              </div>
-            </li>
-            <li>
-              <img class="comment-avatar" src="img/avatars/6.jpg" alt="">
-              <div class="comment-details">
-                <span class="comment-author">Thais</span>
-                <span class="comment-date">1w</span>
-                <span class="comment-content">First ! Exercitation ullamco laboris nisi !</span>
-              </div>
-            </li>
-          </ul>
-          <div class="comment-form">
-            <form class="list-block inputs-list">
-              <ul>
-                <li>
-                  <div class="item-content">
-                    <div class="item-media"><i class="icon ion-android-person"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title floating-label">Your name</div>
-                        <div class="item-input item-input-field">
-                        <input type="text" placeholder="" class="">
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="item-content">
-                    <div class="item-media"><i class="icon ion-android-mail"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title floating-label">E-mail</div>
-                        <div class="item-input item-input-field">
-                        <input type="email" placeholder="">
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="align-top">
-                  <div class="item-content">
-                    <div class="item-media"><i class="icon ion-android-chat"></i></div>
-                      <div class="item-inner">
-                        <div class="item-title floating-label">Comment</div>
-                        <div class="item-input item-input-field">
-                        <textarea class="resizable" style="height: 37px;"></textarea>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <a href="#" class="button button-fill">Submit</a>
-            </form>
-          </div>
-        </div>
+        
       </div>
     </div>
     <script type="text/javascript" src="js/framework7.min.js"></script>
