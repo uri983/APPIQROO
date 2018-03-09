@@ -169,7 +169,7 @@ $$('.notification-search').on('click', function () {
 *                                *
 **********************************/
 function getNewsDetail(news_id){
-
+    ProgressIndicator.showSimpleWithLabel(false, 'Cargando...');
     $$.ajax({
                 url: 'http://servicios.apiqroo.com.mx/appiqroo_service/home/getNewsbyId/',
                 method: 'POST',
@@ -182,7 +182,7 @@ function getNewsDetail(news_id){
                   $('#post-content').html(jQuery(res).text());
                   $('#post-title').html(response.data[0].post_title);
                   $("#post-img").attr("src",response.data[0].img);
-                  
+                  ProgressIndicator.hide();
                   
                   
                 },
@@ -191,6 +191,7 @@ function getNewsDetail(news_id){
                   alert('ErrorStatus: '+JSON.stringify(status));
                 }
     });
+
 
     
 
