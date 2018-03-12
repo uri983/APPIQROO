@@ -11,6 +11,18 @@
         "type": "tag"
       },
       "C:\\xampp\\htdocs\\APPIQROO\\node_modules"
+    ],
+    [
+      {
+        "raw": "cordova-plugin-x-socialsharing",
+        "scope": null,
+        "escapedName": "cordova-plugin-x-socialsharing",
+        "name": null,
+        "rawSpec": "cordova-plugin-x-socialsharing",
+        "spec": "C:\\xampp\\htdocs\\APPIQROO\\node_modules\\cordova-plugin-x-socialsharing",
+        "type": "directory"
+      },
+      "C:\\xampp\\htdocs\\APPIQROO\\node_modules"
     ]
   ],
   "_from": "cordova-plugin-x-socialsharing@latest",
@@ -32,10 +44,10 @@
     "raw": "cordova-plugin-x-socialsharing",
     "scope": null,
     "escapedName": "cordova-plugin-x-socialsharing",
-    "name": "cordova-plugin-x-socialsharing",
-    "rawSpec": "",
-    "spec": "latest",
-    "type": "tag"
+    "name": null,
+    "rawSpec": "cordova-plugin-x-socialsharing",
+    "spec": "C:\\xampp\\htdocs\\APPIQROO\\node_modules\\cordova-plugin-x-socialsharing",
+    "type": "directory"
   },
   "_requiredBy": [
     "#USER",
