@@ -7,14 +7,6 @@ module.exports = [
         "clobbers": [
             "window.StatusBar"
         ]
-    },
-    {
-        "file": "plugins/cordova-plugin-progressindicator2/www/progressIndicator.js",
-        "id": "cordova-plugin-progressindicator2.ProgressIndicator",
-        "pluginId": "cordova-plugin-progressindicator2",
-        "clobbers": [
-            "ProgressIndicator"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -22,8 +14,7 @@ module.exports.metadata =
 {
     "cordova-plugin-whitelist": "1.2.2",
     "cordova-plugin-console": "1.0.7",
-    "cordova-plugin-statusbar": "1.0.1",
-    "cordova-plugin-progressindicator2": "1.2.1"
+    "cordova-plugin-statusbar": "1.0.1"
 }
 // BOTTOM OF METADATA
 });
