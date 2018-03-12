@@ -38,9 +38,9 @@ $$(document).on('page:index', function (e) {
 
 });
 
-app.onPageInit('about', function (page) {
+app.onPageInit('cruceros', function (page) {
     // Do something here for "about" page
-     alert('about');
+    loadArribos();
 });
 
 
@@ -89,7 +89,8 @@ app.onPageInit('post', function (page) {
            alert("Error al compartir el contenido: " + msg);
         }
     
-      window.plugins.socialsharing.shareViaTwitter(options, onSuccess, onError);
+      window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
+
     });
 
     
@@ -214,6 +215,28 @@ $$('.notification-search').on('click', function () {
 *      Funcionalidades           *
 *                                *
 **********************************/
+
+function loadArribos(){
+
+  $$.ajax({
+                url: 'http://servicios.apiqroo.com.mx/calendario-cruceros/app_service.php',
+                method: 'POST',
+                dataType: 'json',
+                success: function(response){
+                
+                 $('#contenido').html(response);
+                  
+                },
+                error: function(xhr, status){
+                  alert('Error: '+JSON.stringify(xhr));
+                  alert('ErrorStatus: '+JSON.stringify(status));
+                }
+    });
+
+}
+
+
+
 function getNewsDetail(news_id){
   //SpinnerPlugin.activityStart("Cargando...");
     $$.ajax({
