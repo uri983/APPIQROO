@@ -49,23 +49,33 @@ app.onPageInit('post', function (page) {
     getNewsDetail(page.query.news_id);
 
     var options = {
-      message: 'share this', // not supported on some apps (Facebook, Instagram)
-      subject: 'the subject', // fi. for email
+      message: localStorage.title, // not supported on some apps (Facebook, Instagram)
+      subject: localStorage.title, // fi. for email
       files: ['', ''], // an array of filenames either locally or remotely
-      url: 'https://www.website.com/foo/#bar?a=b',
-      chooserTitle: 'Pick an app' // Android only, you can override the default share sheet title
+      url: localStorage.url,
+      chooserTitle: localStorage.title // Android only, you can override the default share sheet title
     }
  
     var onSuccess = function(result) {
       console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
-      console.log("Shared to app: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
+      console.log("Compartido: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
     }
  
     var onError = function(msg) {
-      console.log("Sharing failed with message: " + msg);
+      console.log("Error al compartir el contenido: " + msg);
     }
 
-    window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
+    $('#float_facebook').on('click',function(){
+      console.log(options);
+      window.plugins.socialsharing.shareViaFacebook(options, onSuccess, onError);
+    });
+
+    $('#float_twitter').on('click',function(){
+      console.log(options);
+      window.plugins.socialsharing.shareViaTwitter(options, onSuccess, onError);
+    });
+
+    
 })
 
 
@@ -201,6 +211,9 @@ function getNewsDetail(news_id){
                   $('#post-content').html(jQuery(res).text());
                   $('#post-title').html(response.data[0].post_title);
                   $("#post-img").attr("src",response.data[0].img);
+
+                  localStorage.title = response.data[0].post_title;
+                  localStorage.url   = response.data[0].guid;
                   SpinnerPlugin.activityStop();
                   
                   
