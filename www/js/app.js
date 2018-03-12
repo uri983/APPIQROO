@@ -50,46 +50,14 @@ app.onPageInit('post', function (page) {
 
     
     $('#float_facebook').on('click',function(){
-      var options = {
-        message: localStorage.title, // not supported on some apps (Facebook, Instagram)
-        subject: localStorage.title, // fi. for email
-        files: ['', ''], // an array of filenames either locally or remotely
-        url: localStorage.url,
-        chooserTitle: localStorage.title // Android only, you can override the default share sheet title
-      }
-   
-      var onSuccess = function(result) {
-        console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
-        alert("Compartido: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
-      }
-   
-      var onError = function(msg) {
-         alert("Error al compartir el contenido: " + msg);
-      }
 
-      window.plugins.socialsharing.shareViaFacebook(options, onSuccess, onError);
+      window.plugins.socialsharing.shareViaFacebook(localStorage.title,  localStorage.img, localStorage.url, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})
+      
     });
 
     $('#float_twitter').on('click',function(){
 
-        var options = {
-          message: localStorage.title, // not supported on some apps (Facebook, Instagram)
-          subject: localStorage.title, // fi. for email
-          files: ['', ''], // an array of filenames either locally or remotely
-          url: localStorage.url,
-          chooserTitle: localStorage.title // Android only, you can override the default share sheet title
-        }
- 
-        var onSuccess = function(result) {
-          console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
-          alert("Compartido: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
-        }
- 
-        var onError = function(msg) {
-           alert("Error al compartir el contenido: " + msg);
-        }
-    
-      window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
+      window.plugins.socialsharing.shareViaTwitter(localStorage.title, localStorage.img, localStorage.url);
 
     });
 
@@ -238,7 +206,7 @@ function loadArribos(){
 
 
 function getNewsDetail(news_id){
-  //SpinnerPlugin.activityStart("Cargando...");
+  SpinnerPlugin.activityStart("Cargando...");
     $$.ajax({
                 url: 'http://servicios.apiqroo.com.mx/appiqroo_service/home/getNewsbyId/',
                 method: 'POST',
@@ -247,14 +215,15 @@ function getNewsDetail(news_id){
                 success: function(response){
                  
                   var res = response.data[0].post_content.replace(/\[.*?\]\s?/g, '')
-                 $('.post-date').html(response.data[0].post_date);
+                  $('.post-date').html(response.data[0].post_date);
                   $('#post-content').html(jQuery(res).text());
                   $('#post-title').html(response.data[0].post_title);
                   $("#post-img").attr("src",response.data[0].img);
 
                   localStorage.title = response.data[0].post_title;
                   localStorage.url   = response.data[0].guid;
-                 // SpinnerPlugin.activityStop();
+                  localStorage.img   = response.data[0].img;
+                  SpinnerPlugin.activityStop();
                   
                   
                 },
