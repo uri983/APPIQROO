@@ -191,9 +191,36 @@ function loadArribos(){
                 method: 'POST',
                 dataType: 'json',
                 success: function(response){
-                
-                 $('#contenido').html(response);
-                  
+                var html="";
+                var count = Object.keys(response).length;
+                 console.log(response);
+
+                 for (var j = 0; j < count; j++) {
+                      console.log(response[j]);
+                        html+=  "<li>";
+                        html+=   "<a href=\"#\">";
+                        html+=     "<div class=\"post\">";
+                        html+=      "<div class=\"post-details\">";
+                        html+=        "<div class=\"post-category\">"+response[j].NPUERTO+"</div>";
+                        html+=        "<h2 class=\"post-title-content\">"+response[j].NCRUCERO+"</h2>";
+                        var res = response[j].PNAVIERA.split("|");
+                        var status = "";
+                        if(response[j].ESTATUS == "A"){
+                          status = "<span style=\"color:#009688;\"> ARRIBADO </span>";
+                        }else if(response[j].ESTATUS == "P"){
+                          status = "<span style=\"color:#d68918;\"> PROGRAMADO </span>";
+                        }else{
+                          status = "<span style=\"color:#c50e00;\"> CANCELADO </span>";
+                        }
+                        html+=       "<div style=\"color:#2c3944;\" class=\"post-publication\"><img src=\"http://estadistica.apiqroo.com.mx/assets/img/flags/"+res['0']+".png\"> "+ res[1] +" - "+ status +"</div>";
+                        html+=     "</div>";
+                        html+=   "</div>";
+                        html+="</a>";
+                       html+=  "</li>";
+                  }
+
+                  $('#list-content').html(html);
+                 
                 },
                 error: function(xhr, status){
                   alert('Error: '+JSON.stringify(xhr));
