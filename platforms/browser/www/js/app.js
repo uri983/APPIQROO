@@ -195,7 +195,7 @@ function loadArribos(){
                 var count = Object.keys(response).length;
                  console.log(response);
                 var group_header = ""; 
-
+                 SpinnerPlugin.activityStart("Cargando...");
                  for (var j = 0; j < count; j++) {
                         if(group_header != response[j].FFECHA ){
                         html+="<div style=\"margin:0px;\" class=\"list-block\"><li class=\"list-group-title\">"+response[j].NFECHA+"</li></div>";
@@ -205,8 +205,8 @@ function loadArribos(){
                         html+=  "<li>";
                         html+=   "<a href=\"#\">";
                         html+=     "<div class=\"post\">";
-                        html+=      "<div class=\"post-details\">";
-                        html+=        "<div class=\"post-category\">"+response[j].NPUERTO+"</div>";
+                        html+=      "<div style=\"    width: 100%;\" class=\"post-details\">";
+                        html+=        "<div style=\"color:#345386;\" class=\"post-category\">"+response[j].NPUERTO+"</div>";
                         html+=        "<h2 class=\"post-title-content\">"+response[j].NCRUCERO+"</h2>";
                         var res = response[j].PNAVIERA.split("|");
                         var status = "";
@@ -225,7 +225,7 @@ function loadArribos(){
                   }
 
                   $('#list-content').html(html);
-                 
+                 SpinnerPlugin.activityStop();
                 },
                 error: function(xhr, status){
                   alert('Error: '+JSON.stringify(xhr));
