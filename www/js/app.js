@@ -194,9 +194,14 @@ function loadArribos(){
                 var html="";
                 var count = Object.keys(response).length;
                  console.log(response);
+                var group_header = ""; 
 
                  for (var j = 0; j < count; j++) {
-                      console.log(response[j]);
+                        if(group_header != response[j].FFECHA ){
+                        html+="<div style=\"margin:0px;\" class=\"list-block\"><li class=\"list-group-title\">"+response[j].NFECHA+"</li></div>";
+                        group_header = response[j].FFECHA;
+                        }
+                  
                         html+=  "<li>";
                         html+=   "<a href=\"#\">";
                         html+=     "<div class=\"post\">";
