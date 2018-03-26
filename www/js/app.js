@@ -117,7 +117,12 @@ $$(document).on('page:init', function (e) {
     loading = true;
 
     // Simulation of an Ajax request for demo
-    listNews(10);
+    setTimeout(function(){
+      listNews(10);
+      app.detachInfiniteScroll($$('.infinite-scroll')); // For demo, we add just 2 posts and detach the infinite-scroll to prevent unnecessary loadings
+      $$('.infinite-scroll-preloader').remove(); // For demo, we add just 2 posts and remove the loader
+      loading = false;
+    }, 1000);
   });
 
 });
