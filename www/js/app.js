@@ -25,6 +25,33 @@ $$(document).on('DOMContentLoaded', function (e) {
 
   listNews(0);
 
+  ////////// INFINITE SCROLL //////////
+
+  var loading = true;
+
+  // When infiniteScroll is called
+  $$('.infinite-scroll').on('infinite', function () {
+   
+    
+    // Exit, if infinite scroll is in progress
+    if (!loading) return;
+
+    // Set loading true
+    loading = false;
+
+    // Simulation of an Ajax request for demo
+    setTimeout(function(){
+       var lastItemIndex = $$('#news li').length;
+      loading = true;
+     
+      listNews(lastItemIndex);
+      //app.detachInfiniteScroll($$('.infinite-scroll')); // For demo, we add just 2 posts and detach the infinite-scroll to prevent unnecessary loadings
+      //$$('.infinite-scroll-preloader').remove(); // For demo, we add just 2 posts and remove the loader
+      //loading = false;
+      var lastItemIndex = $$('#news li').length;
+    }, 1000);
+  });
+
 })
 
 $$(document).on('deviceready', function() {
@@ -103,27 +130,7 @@ $$(document).on('page:init', function (e) {
   });
 
 
-  ////////// INFINITE SCROLL //////////
-
-  var loading = false;
-
-  // When infiniteScroll is called
-  $$('.infinite-scroll').on('infinite', function () {
-
-    // Exit, if infinite scroll is in progress
-    if (loading) return;
-
-    // Set loading true
-    loading = true;
-
-    // Simulation of an Ajax request for demo
-    setTimeout(function(){
-      listNews(10);
-      app.detachInfiniteScroll($$('.infinite-scroll')); // For demo, we add just 2 posts and detach the infinite-scroll to prevent unnecessary loadings
-      $$('.infinite-scroll-preloader').remove(); // For demo, we add just 2 posts and remove the loader
-      loading = false;
-    }, 1000);
-  });
+  
 
 });
 
@@ -261,7 +268,7 @@ function listNews(start){
                   html+=      "<img alt=\"\" src=\""+response.data[0].img+"\">";
                   html+=   "</div>";
                   html+=    "<div class=\"post-details\">";
-                  html+=      "<div class=\"post-category\">Noticias</div><div class=\"post-publication\">"+response.data[0].post_date+"</div>";
+                  html+=      "<div class=\"post-category\">"+response.data[0].tag+"</div><div class=\"post-publication\">"+response.data[0].post_date+"</div>";
                   html+=      "<div class=\"post-title\">";
                   html+=        "<h2 class=\"post-title-content\">"+response.data[0].post_title+"</h2>";
                   html+=      "</div>";
@@ -273,6 +280,10 @@ function listNews(start){
                   //console.log(count);
                   for (var j = 1; j < count; j++) {
                       //console.log(response.data[j]);
+                      //
+                      if( response.data[j].tag == null){
+                          response.data[j].tag ="Noticias";
+                      }
                       html+=  "<li>";
                       html+=   "<a href=\"post.html?news_id="+response.data[j].ID+"\">";
                       html+=     "<div class=\"post\">";
@@ -280,7 +291,7 @@ function listNews(start){
                        html+=        "<img alt=\"\" src=\""+response.data[j].img+"\">";
                        html+=      "</div>";
                        html+=      "<div class=\"post-details\">";
-                       html+=        "<div class=\"post-category\">Noticias</div>";
+                       html+=        "<div class=\"post-category\">"+response.data[j].tag+"</div>";
                        html+=        "<h2 class=\"post-title-content\">"+response.data[j].post_title+"</h2>";
                        html+=       "<div class=\"post-publication\">"+response.data[j].post_date+"</div>";
                         html+=     "</div>";
