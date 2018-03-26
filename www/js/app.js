@@ -4,7 +4,8 @@
 
 var app = new Framework7({
   pushState: true,
-  swipePanel: 'left',
+  swipeBackPage:false,
+  swipePanel:false,
   material: true
 });
 
@@ -22,7 +23,7 @@ var mainView = app.addView('.view-main', {
 
 $$(document).on('DOMContentLoaded', function (e) {
 
-  listNews();
+  listNews(0);
 
 })
 
@@ -116,41 +117,7 @@ $$(document).on('page:init', function (e) {
     loading = true;
 
     // Simulation of an Ajax request for demo
-    setTimeout(function(){
-      $$('.infinite-scroll ul').append(
-        '<li>'+
-          '<a href="post.html">'+
-            '<div class="post">'+
-              '<div class="post-image">'+
-                '<img alt="" src="img/thumbnails/10.jpg">'+
-              '</div>'+
-              '<div class="post-details">'+
-                '<div class="post-category">Music</div>'+
-                '<h2 class="post-title-content">Top 5 Summer Hits Of November</h2>'+
-                '<div class="post-publication">3 weeks ago</div>'+
-              '</div>'+
-            '</div>'+
-          '</a>'+
-        '</li>'+
-        '<li>'+
-          '<a href="post.html">'+
-            '<div class="post">'+
-              '<div class="post-image">'+
-                '<img alt="" src="img/thumbnails/11.jpg">'+
-              '</div>'+
-              '<div class="post-details">'+
-                '<div class="post-category">Lifestyle</div>'+
-                '<h2 class="post-title-content">The Best Things To During Summer Holidays</h2>'+
-                '<div class="post-publication">1 month ago</div>'+
-              '</div>'+
-            '</div>'+
-          '</a>'+
-        '</li>'
-      );
-      app.detachInfiniteScroll($$('.infinite-scroll')); // For demo, we add just 2 posts and detach the infinite-scroll to prevent unnecessary loadings
-      $$('.infinite-scroll-preloader').remove(); // For demo, we add just 2 posts and remove the loader
-      loading = false;
-    }, 2000);
+    listNews(10);
   });
 
 });
@@ -218,6 +185,7 @@ function loadArribos(){
                           status = "<span style=\"color:#c50e00;\"> CANCELADO </span>";
                         }
                         html+=       "<div style=\"color:#2c3944;\" class=\"post-publication\"><img src=\"http://estadistica.apiqroo.com.mx/assets/img/flags/"+res['0']+".png\"> "+ res[1] +" - "+ status +"</div>";
+                        html+=       "<div style=\"color:#2c3944;\" class=\"post-publication\">ETA: "+ response[j].ETA +" ETD: "+ response[j].ETD +" </div>";
                         html+=     "</div>";
                         html+=   "</div>";
                         html+="</a>";
@@ -271,14 +239,16 @@ function getNewsDetail(news_id){
 }
 
 
-function listNews(){
+function listNews(start){
 
     $$.ajax({
                 url: 'http://servicios.apiqroo.com.mx/appiqroo_service/home/getNews/',
                 method: 'POST',
                 dataType: 'json',
+                data:{'start':start},
                 success: function(response){
                   //console.log(response);
+                  var pre_html =  $('#news').html();
                   var html = " <li>";
                   html+= "<a href=\"post.html?news_id="+response.data[0].ID+"\">";
                   html+=  "<div class=\"post\">";
@@ -316,7 +286,7 @@ function listNews(){
 
                  
 
-                  $('#news').html(html);
+                  $('#news').html(pre_html + html);
                   
                 },
                 error: function(xhr, status){

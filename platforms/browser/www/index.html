@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#2196f3">
-    <title>Novo</title>
+    <title>APIQROO</title>
     <link rel="stylesheet" href="css/framework7.material.min.css">
     <link rel="stylesheet" href="css/framework7.material.colors.min.css">
     <link rel="stylesheet" href="css/ionicons.min.css">
@@ -390,7 +390,14 @@
             <li>
               <a href="categories.html" class="item-content item-link close-panel">
                 <div class="item-inner">
-                  <div class="item-title"><i class="icon ion-document-text"></i>Horarios de cruce</div>
+                  <div class="item-title"><i class="icon ion-clock"></i>Horarios de cruce</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="puertos_list.html" class="item-content item-link close-panel">
+                <div class="item-inner">
+                  <div class="item-title"><i class="icon ion-android-boat"></i>Estado del puerto</div>
                 </div>
               </a>
             </li>
@@ -420,11 +427,15 @@
               </div>
             </div>
             <!-- Scrollable page content -->
-            <div class="page-content">
+            <div class="page-content infinite-scroll" data-distance="100">
               <ul class="post-list header-1" id="news">
                               
 
               </ul>
+              <!-- Preloader -->
+              <div class="infinite-scroll-preloader">
+                <div class="preloader"></div>
+              </div>
             </div>
           </div>
         </div>
