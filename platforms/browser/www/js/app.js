@@ -23,7 +23,30 @@ var mainView = app.addView('.view-main', {
 
 $$(document).on('DOMContentLoaded', function (e) {
 
-  listNews(0);
+  
+
+})
+
+$$(document).on('deviceready', function() {
+  
+});
+
+////////// CUSTOM JS ON OTHER PAGES //////////
+
+$$(document).on('page:index', function (e) {
+
+  
+
+});
+
+app.onPageInit('cruceros', function (page) {
+    // Do something here for "about" page
+    loadArribos();
+});
+
+app.onPageInit('index', function (page) {
+    // Do something here for "about" page
+    listNews(0);
 
   ////////// INFINITE SCROLL //////////
 
@@ -51,30 +74,7 @@ $$(document).on('DOMContentLoaded', function (e) {
       var lastItemIndex = $$('#news li').length;
     }, 1000);
   });
-
-})
-
-$$(document).on('deviceready', function() {
-  
-});
-
-////////// CUSTOM JS ON OTHER PAGES //////////
-
-$$(document).on('page:index', function (e) {
-
-  
-
-});
-
-app.onPageInit('cruceros', function (page) {
-    // Do something here for "about" page
-    loadArribos();
-});
-
-app.onPageInit('index', function (page) {
-    // Do something here for "about" page
-    //alert('hola');
-});
+}).trigger();
 
 
 app.onPageInit('naviera_list', function (page) {
