@@ -71,6 +71,17 @@ app.onPageInit('cruceros', function (page) {
     loadArribos();
 });
 
+app.onPageInit('index', function (page) {
+    // Do something here for "about" page
+    //alert('hola');
+});
+
+
+app.onPageInit('naviera_list', function (page) {
+    // Do something here for "about" page
+    
+});
+
 
 app.onPageInit('post', function (page) {
     // Do something here for "about" page
@@ -225,16 +236,19 @@ function getNewsDetail(news_id){
                 dataType: 'json',
                 data:{'new_id':news_id},
                 success: function(response){
+
+                  var img = response.data[0].img.replace("dev.apiqroo.com.mx/v2017-v3", "www.apiqroo.com.mx");
+                      img = img.replace("dev.apiqroo.com.mx/v2017", "www.apiqroo.com.mx");
                  
                   var res = response.data[0].post_content.replace(/\[.*?\]\s?/g, '')
                   $('.post-date').html(response.data[0].post_date);
                   $('#post-content').html(jQuery(res).text());
                   $('#post-title').html(response.data[0].post_title);
-                  $("#post-img").attr("src",response.data[0].img);
+                  $("#post-img").attr("src",img);
 
                   localStorage.title = response.data[0].post_title;
                   localStorage.url   = response.data[0].guid;
-                  localStorage.img   = response.data[0].img;
+                  localStorage.img   = img;
                   SpinnerPlugin.activityStop();
                   
                   
@@ -260,6 +274,9 @@ function listNews(start){
                 data:{'start':start},
                 success: function(response){
                   //console.log(response);
+                  if( response.data[0].tag == null){
+                          response.data[0].tag ="Noticias";
+                      }
                   var pre_html =  $('#news').html();
                   var html = " <li>";
                   html+= "<a href=\"post.html?news_id="+response.data[0].ID+"\">";
@@ -288,7 +305,10 @@ function listNews(start){
                       html+=   "<a href=\"post.html?news_id="+response.data[j].ID+"\">";
                       html+=     "<div class=\"post\">";
                       html+=       "<div class=\"post-image\">";
-                       html+=        "<img alt=\"\" src=\""+response.data[j].img+"\">";
+                      var img = response.data[j].img.replace("dev.apiqroo.com.mx/v2017-v3", "www.apiqroo.com.mx");
+                      img = img.replace("dev.apiqroo.com.mx/v2017", "www.apiqroo.com.mx");
+                      
+                       html+=        "<img alt=\"\" src=\""+img+"\">";
                        html+=      "</div>";
                        html+=      "<div class=\"post-details\">";
                        html+=        "<div class=\"post-category\">"+response.data[j].tag+"</div>";
@@ -306,8 +326,7 @@ function listNews(start){
                   
                 },
                 error: function(xhr, status){
-                  alert('Error: '+JSON.stringify(xhr));
-                  alert('ErrorStatus: '+JSON.stringify(status));
+                 
                 }
               });
         }
