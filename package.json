@@ -11,12 +11,16 @@
             "cordova-plugin-spinner": {},
             "cordova-plugin-statusbar": {},
             "cordova-plugin-whitelist": {},
-            "cordova-plugin-x-socialsharing": {}
+            "cordova-plugin-x-socialsharing": {},
+            "cordova-plugin-googlemaps": {
+                "API_KEY_FOR_ANDROID": "AIzaSyBaSireiUZFNJFM5j1wF5SGV9jL4HZeTz4"
+            }
         }
     },
     "dependencies": {
-        "cordova-browser": "~4.1.0",
+        "cordova-browser": "^4.1.0",
         "cordova-plugin-console": "~1.0.1",
+        "cordova-plugin-googlemaps": "^2.2.9",
         "cordova-plugin-spinner": "~1.1.0",
         "cordova-plugin-statusbar": "~1.0.1",
         "cordova-plugin-whitelist": "~1.2.0",

@@ -83,6 +83,17 @@ app.onPageInit('naviera_list', function (page) {
 });
 
 
+app.onPageInit('puerto_detail', function (page) {
+    // Do something here for "about" page
+    var div = document.getElementById("map_canvas");
+
+    // Initialize the map view
+    map = plugin.google.maps.Map.getMap(div);
+
+
+})
+
+
 app.onPageInit('post', function (page) {
     // Do something here for "about" page
     getNewsDetail(page.query.news_id);

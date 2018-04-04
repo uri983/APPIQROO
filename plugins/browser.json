@@ -10,6 +10,9 @@
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.apiqroo.main.app"
         },
+        "cordova-plugin-googlemaps": {
+            "PACKAGE_NAME": "com.apiqroo.main.app"
+        },
         "cordova-plugin-spinner": {
             "PACKAGE_NAME": "com.apiqroo.main.app"
         },
