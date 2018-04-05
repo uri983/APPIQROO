@@ -85,7 +85,10 @@ app.onPageInit('naviera_list', function (page) {
 
 app.onPageInit('puerto_detail', function (page) {
     // Do something here for "about" page
-    
+    var map = new google.maps.Map(document.getElementById('map_canvas'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
 
 })
 
@@ -180,6 +183,13 @@ $$('.notification-search').on('click', function () {
 *      Funcionalidades           *
 *                                *
 **********************************/
+
+function initMap() {
+        var map = new google.maps.Map(document.getElementById('map_canvas'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+}
 
 function loadArribos(){
 

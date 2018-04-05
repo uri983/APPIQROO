@@ -450,6 +450,11 @@ h3 {padding: 0; margin: 0;}
     }
     .help-block{ font-size:11px;}
     #CORREO{width:270px}
+
+    #map_canvas {
+        height: 400px;
+        width: 100%;
+       }
 </style>
   </head>
   <body>
@@ -515,6 +520,7 @@ h3 {padding: 0; margin: 0;}
             </div>
             <!-- Scrollable page content -->
             <div class="page-content infinite-scroll" data-distance="100">
+            
               <ul class="post-list header-1" id="news">
                               
 
@@ -534,7 +540,8 @@ h3 {padding: 0; margin: 0;}
       </script>
       <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/framework7.min.js"></script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCX5oI4p0_r-rEf3g3PverMblYFkaePUlg&callback=initMap"
+    async defer></script>
     <script type="text/javascript" src="js/app.js"></script>
     
   </body>
