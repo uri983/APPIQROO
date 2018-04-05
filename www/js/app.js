@@ -85,10 +85,20 @@ app.onPageInit('naviera_list', function (page) {
 
 app.onPageInit('puerto_detail', function (page) {
     // Do something here for "about" page
+    
+
+
+    var puerto = {lat: 21.1880624, lng: -86.8071822};
     var map = new google.maps.Map(document.getElementById('map_canvas'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
+          zoom: 18,
+          center: puerto
+    });
+    var marker = new google.maps.Marker({
+          position: {lat: 21.1880624, lng: -86.8071822},
+          map: map
+    });
+
+    
 
 })
 
@@ -185,10 +195,7 @@ $$('.notification-search').on('click', function () {
 **********************************/
 
 function initMap() {
-        var map = new google.maps.Map(document.getElementById('map_canvas'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
+        
 }
 
 function loadArribos(){
