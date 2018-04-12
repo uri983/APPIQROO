@@ -85,6 +85,30 @@ app.onPageInit('naviera_list', function (page) {
 
 app.onPageInit('puerto_detail', function (page) {
     // Do something here for "about" page
+     
+   let puerto_id = page.query.puerto;
+   let puerto_name = "";
+   let img = "";
+
+   if(puerto_id == 2){
+    puerto_name = "Punta Sam";
+    img = "punta_sam";
+   }else if(puerto_id == 3){
+    puerto_name = "Puerto Juarez";
+    img = "puerto_juarez";
+   } else if(puerto_id == 4){
+    puerto_name = "Isla Mujeres";
+    img = "isla_mujeres";
+   } else if(puerto_id == 7){
+    puerto_name = "Cozumel";
+    img = "cozumel";
+   } else if(puerto_id == 26){
+    puerto_name = "Chetumal";
+     img = "chetumal";
+   } 
+   img = "img/puertos/"+ img +".jpg"
+   $('#port_name').html(puerto_name);
+   $("#port_img").attr("src",img);
     
 
 
