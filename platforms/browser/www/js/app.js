@@ -85,42 +85,61 @@ app.onPageInit('naviera_list', function (page) {
 
 app.onPageInit('puerto_detail', function (page) {
     // Do something here for "about" page
-     
+   SpinnerPlugin.activityStart("Cargando...");   
    let puerto_id = page.query.puerto;
    let puerto_name = "";
    let img = "";
 
-   if(puerto_id == 2){
-    puerto_name = "Punta Sam";
-    img = "punta_sam";
-   }else if(puerto_id == 3){
-    puerto_name = "Puerto Juarez";
-    img = "puerto_juarez";
-   } else if(puerto_id == 4){
-    puerto_name = "Isla Mujeres";
-    img = "isla_mujeres";
-   } else if(puerto_id == 7){
-    puerto_name = "Cozumel";
-    img = "cozumel";
-   } else if(puerto_id == 26){
-    puerto_name = "Chetumal";
-     img = "chetumal";
-   } 
-   img = "img/puertos/"+ img +".jpg"
-   $('#port_name').html(puerto_name);
-   $("#port_img").attr("src",img);
+
+   $$.ajax({
+                url: 'http://app.apiqroo.com.mx/public/apis/port_details',
+                method: 'POST',
+                dataType: 'json',
+                data:{'puerto_id':puerto_id},
+                success: function(response){
+                  console.log(response);
+                  SpinnerPlugin.activityStop();
+
+                  if(puerto_id == 2){
+                    img = "punta_sam";
+                   }else if(puerto_id == 3){
+                    img = "puerto_juarez";
+                   } else if(puerto_id == 4){
+                    img = "isla_mujeres";
+                   } else if(puerto_id == 7){
+                    img = "cozumel";
+                   } else if(puerto_id == 26){
+                     img = "chetumal";
+                   } 
+                   img = "img/puertos/"+ img +".jpg"
+                   $('#port_name').html(response.PUER_SNAME);
+                   $("#port_img").attr("src",img);
+                   var lat = parseFloat(response.PUER_LAT);
+                   var lon = parseFloat(response.PUER_LON);
+                   var puerto_coord = {lat: lat, lng: lon};
+                   console.log(puerto_coord);
+                   var map = new google.maps.Map(document.getElementById('map_canvas'), {
+                          zoom: 18,
+                          center: puerto_coord
+                  });
+                   var marker = new google.maps.Marker({
+                          position: puerto_coord,
+                          map: map
+                  });
+                  
+                  
+                },
+                error: function(xhr, status){
+                  alert('Error: '+JSON.stringify(xhr));
+                  alert('ErrorStatus: '+JSON.stringify(status));
+                }
+    });
+
+   
     
 
 
-    var puerto = {lat: 21.1880624, lng: -86.8071822};
-    var map = new google.maps.Map(document.getElementById('map_canvas'), {
-          zoom: 18,
-          center: puerto
-    });
-    var marker = new google.maps.Marker({
-          position: {lat: 21.1880624, lng: -86.8071822},
-          map: map
-    });
+    
 
     
 
@@ -279,23 +298,23 @@ function loadArribos(){
 function getNewsDetail(news_id){
   SpinnerPlugin.activityStart("Cargando...");
     $$.ajax({
-                url: 'http://servicios.apiqroo.com.mx/appiqroo_service/home/getNewsbyId/',
+                url: 'http://app.apiqroo.com.mx/public/apis/news_details',
                 method: 'POST',
                 dataType: 'json',
                 data:{'new_id':news_id},
                 success: function(response){
-
-                  var img = response.data[0].img.replace("dev.apiqroo.com.mx/v2017-v3", "www.apiqroo.com.mx");
+                  //console.log(response);
+                  var img = response[0].img.replace("dev.apiqroo.com.mx/v2017-v3", "www.apiqroo.com.mx");
                       img = img.replace("dev.apiqroo.com.mx/v2017", "www.apiqroo.com.mx");
                  
-                  var res = response.data[0].post_content.replace(/\[.*?\]\s?/g, '')
-                  $('.post-date').html(response.data[0].post_date);
+                  var res = response[0].post_content.replace(/\[.*?\]\s?/g, '')
+                  $('.post-date').html(response[0].post_date);
                   $('#post-content').html(jQuery(res).text());
-                  $('#post-title').html(response.data[0].post_title);
+                  $('#post-title').html(response[0].post_title);
                   $("#post-img").attr("src",img);
 
-                  localStorage.title = response.data[0].post_title;
-                  localStorage.url   = response.data[0].guid;
+                  localStorage.title = response[0].post_title;
+                  localStorage.url   = response[0].guid;
                   localStorage.img   = img;
                   SpinnerPlugin.activityStop();
                   
@@ -316,52 +335,54 @@ function getNewsDetail(news_id){
 function listNews(start){
 
     $$.ajax({
-                url: 'http://servicios.apiqroo.com.mx/appiqroo_service/home/getNews/',
+                url: 'http://app.apiqroo.com.mx/public/apis/news',
                 method: 'POST',
                 dataType: 'json',
                 data:{'start':start},
                 success: function(response){
-                  //console.log(response);
-                  if( response.data[0].tag == null){
-                          response.data[0].tag ="Noticias";
+                  //console.log(response[0].tag);
+                  if( response[0].tag == null){
+                          response[0].tag ="Noticias";
                       }
                   var pre_html =  $('#news').html();
                   var html = " <li>";
-                  html+= "<a href=\"post.html?news_id="+response.data[0].ID+"\">";
+                  html+= "<a href=\"post.html?news_id="+response[0].ID+"\">";
                   html+=  "<div class=\"post\">";
                   html+=    "<div class=\"post-image\">";
-                  html+=      "<img alt=\"\" src=\""+response.data[0].img+"\">";
+                  html+=      "<img alt=\"\" src=\""+response[0].img+"\">";
                   html+=   "</div>";
                   html+=    "<div class=\"post-details\">";
-                  html+=      "<div class=\"post-category\">"+response.data[0].tag+"</div><div class=\"post-publication\">"+response.data[0].post_date+"</div>";
+                  html+=      "<div class=\"post-category\">"+response[0].tag+"</div><div class=\"post-publication\">"+response[0].post_date+"</div>";
                   html+=      "<div class=\"post-title\">";
-                  html+=        "<h2 class=\"post-title-content\">"+response.data[0].post_title+"</h2>";
+                  html+=        "<h2 class=\"post-title-content\">"+response[0].post_title+"</h2>";
                   html+=      "</div>";
                   html+=    "</div>";
                   html+=  "</div>";
                   html+="</a>";
                   html+="</li>";
-                  var count = Object.keys(response.data).length;
+
+
+                  var count = Object.keys(response).length;
                   //console.log(count);
                   for (var j = 1; j < count; j++) {
                       //console.log(response.data[j]);
                       //
-                      if( response.data[j].tag == null){
-                          response.data[j].tag ="Noticias";
+                      if( response[j].tag == null){
+                          response[j].tag ="Noticias";
                       }
                       html+=  "<li>";
-                      html+=   "<a href=\"post.html?news_id="+response.data[j].ID+"\">";
+                      html+=   "<a href=\"post.html?news_id="+response[j].ID+"\">";
                       html+=     "<div class=\"post\">";
                       html+=       "<div class=\"post-image\">";
-                      var img = response.data[j].img.replace("dev.apiqroo.com.mx/v2017-v3", "www.apiqroo.com.mx");
+                      var img = response[j].img.replace("dev.apiqroo.com.mx/v2017-v3", "www.apiqroo.com.mx");
                       img = img.replace("dev.apiqroo.com.mx/v2017", "www.apiqroo.com.mx");
                       
                        html+=        "<img alt=\"\" src=\""+img+"\">";
                        html+=      "</div>";
                        html+=      "<div class=\"post-details\">";
-                       html+=        "<div class=\"post-category\">"+response.data[j].tag+"</div>";
-                       html+=        "<h2 class=\"post-title-content\">"+response.data[j].post_title+"</h2>";
-                       html+=       "<div class=\"post-publication\">"+response.data[j].post_date+"</div>";
+                       html+=        "<div class=\"post-category\">"+response[j].tag+"</div>";
+                       html+=        "<h2 class=\"post-title-content\">"+response[j].post_title+"</h2>";
+                       html+=       "<div class=\"post-publication\">"+response[j].post_date+"</div>";
                         html+=     "</div>";
                         html+=   "</div>";
                         html+="</a>";
@@ -374,7 +395,8 @@ function listNews(start){
                   
                 },
                 error: function(xhr, status){
-                 
+                  //alert('Error: '+JSON.stringify(xhr));
+                  //alert('ErrorStatus: '+JSON.stringify(status));
                 }
               });
         }
