@@ -111,7 +111,7 @@ app.onPageInit('puerto_detail', function (page) {
                    } else if(puerto_id == 26){
                      img = "chetumal";
                    } 
-                   img = "img/puertos/"+ img +".jpg"
+                   img = "http://app.apiqroo.com.mx/public/puertos/"+ img +".JPG"
                    $('#port_name').html(response.PUER_SNAME);
                    $("#port_img").attr("src",img);
                    var lat = parseFloat(response.PUER_LAT);
