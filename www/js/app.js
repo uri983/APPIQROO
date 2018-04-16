@@ -244,7 +244,7 @@ function initMap() {
 function loadArribos(){
 
   $$.ajax({
-                url: 'http://servicios.apiqroo.com.mx/calendario-cruceros/app_service.php',
+                url: 'http://app.apiqroo.com.mx/public/apis/arribos',
                 method: 'POST',
                 dataType: 'json',
                 success: function(response){
