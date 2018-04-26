@@ -84,64 +84,10 @@ app.onPageInit('naviera_list', function (page) {
 
 
 app.onPageInit('puerto_detail', function (page) {
-    // Do something here for "about" page
-   SpinnerPlugin.activityStart("Cargando...");   
+    
    let puerto_id = page.query.puerto;
-   let puerto_name = "";
-   let img = "";
 
-
-   $$.ajax({
-                url: 'http://app.apiqroo.com.mx/public/apis/port_details',
-                method: 'POST',
-                dataType: 'json',
-                data:{'puerto_id':puerto_id},
-                success: function(response){
-                  console.log(response);
-                  SpinnerPlugin.activityStop();
-
-                  if(puerto_id == 2){
-                    img = "punta_sam";
-                   }else if(puerto_id == 3){
-                    img = "puerto_juarez";
-                   } else if(puerto_id == 4){
-                    img = "isla_mujeres";
-                   } else if(puerto_id == 7){
-                    img = "cozumel";
-                   } else if(puerto_id == 26){
-                     img = "chetumal";
-                   } 
-                   img = "http://app.apiqroo.com.mx/public/puertos/"+ img +".JPG"
-                   $('#port_name').html(response.PUER_SNAME);
-                   $("#port_img").attr("src",img);
-                   var lat = parseFloat(response.PUER_LAT);
-                   var lon = parseFloat(response.PUER_LON);
-                   var puerto_coord = {lat: lat, lng: lon};
-                   console.log(puerto_coord);
-                   var map = new google.maps.Map(document.getElementById('map_canvas'), {
-                          zoom: 18,
-                          center: puerto_coord
-                  });
-                   var marker = new google.maps.Marker({
-                          position: puerto_coord,
-                          map: map
-                  });
-                  
-                  
-                },
-                error: function(xhr, status){
-                  alert('Error: '+JSON.stringify(xhr));
-                  alert('ErrorStatus: '+JSON.stringify(status));
-                }
-    });
-
-   
-    
-
-
-    
-
-    
+   getPuertoDetail(puerto_id);
 
 })
 
@@ -150,18 +96,6 @@ app.onPageInit('post', function (page) {
     // Do something here for "about" page
     getNewsDetail(page.query.news_id);
 
-    
-    $('#float_facebook').on('click',function(){
-
-      window.plugins.socialsharing.shareViaFacebook(localStorage.title,  localStorage.img, localStorage.url, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})
-      
-    });
-
-    $('#float_twitter').on('click',function(){
-
-      window.plugins.socialsharing.shareViaTwitter(localStorage.title, localStorage.img, localStorage.url);
-
-    });
 
     
 })
@@ -244,9 +178,10 @@ function initMap() {
 function loadArribos(){
 
   $$.ajax({
-                url: 'http://app.apiqroo.com.mx/public/apis/arribos',
+                url: 'http://app.apiqroo.com.mx/apis/arribos',
                 method: 'POST',
                 dataType: 'json',
+                 data:{'user_email':'email@example.com','user_password':'123456'},
                 success: function(response){
                 var html="";
                 var count = Object.keys(response).length;
@@ -298,10 +233,10 @@ function loadArribos(){
 function getNewsDetail(news_id){
   SpinnerPlugin.activityStart("Cargando...");
     $$.ajax({
-                url: 'http://app.apiqroo.com.mx/public/apis/news_details',
+                url: 'http://app.apiqroo.com.mx/apis/news_details',
                 method: 'POST',
                 dataType: 'json',
-                data:{'new_id':news_id},
+                data:{'new_id':news_id,'user_email':'email@example.com','user_password':'123456'},
                 success: function(response){
                   //console.log(response);
                   var img = response[0].img.replace("dev.apiqroo.com.mx/v2017-v3", "www.apiqroo.com.mx");
@@ -331,14 +266,72 @@ function getNewsDetail(news_id){
 
 }
 
+function getPuertoDetail(port_id){
+
+  // Do something here for "about" page
+   SpinnerPlugin.activityStart("Cargando...");   
+   let puerto_id = port_id;
+   let puerto_name = "";
+   let img = "";
+
+
+   $$.ajax({
+                url: 'http://app.apiqroo.com.mx/apis/port_details',
+                method: 'POST',
+                dataType: 'json',
+                data:{'puerto_id':puerto_id,'user_email':'email@example.com','user_password':'123456'},
+                success: function(response){
+                  console.log(response);
+                  SpinnerPlugin.activityStop();
+
+                  if(puerto_id == 2){
+                    img = "punta_sam";
+                   }else if(puerto_id == 3){
+                    img = "puerto_juarez";
+                   } else if(puerto_id == 4){
+                    img = "isla_mujeres";
+                   } else if(puerto_id == 7){
+                    img = "cozumel";
+                   } else if(puerto_id == 26){
+                     img = "chetumal";
+                   } 
+                   img = "http://app.apiqroo.com.mx/puertos/"+ img +".JPG"
+                   $('#port_name').html(response.PUER_SNAME);
+                   $("#port_img").attr("src",img);
+                   var lat = parseFloat(response.PUER_LAT);
+                   var lon = parseFloat(response.PUER_LON);
+                   var puerto_coord = {lat: lat, lng: lon};
+                   console.log(puerto_coord);
+                   var map = new google.maps.Map(document.getElementById('map_canvas'), {
+                          zoom: 18,
+                          center: puerto_coord
+                  });
+                   var marker = new google.maps.Marker({
+                          position: puerto_coord,
+                          map: map
+                  });
+                  
+                  
+                },
+                error: function(xhr, status){
+                  alert('Error: '+JSON.stringify(xhr));
+                  alert('ErrorStatus: '+JSON.stringify(status));
+                }
+    });
+
+
+
+
+}
+
 
 function listNews(start){
 
     $$.ajax({
-                url: 'http://app.apiqroo.com.mx/public/apis/news',
+                url: 'http://app.apiqroo.com.mx/apis/news',
                 method: 'POST',
                 dataType: 'json',
-                data:{'start':start},
+                data:{'start':start,'user_email':'email@example.com','user_password':'123456'},
                 success: function(response){
                   //console.log(response[0].tag);
                   if( response[0].tag == null){
