@@ -330,7 +330,7 @@ function getPuertoDetail(port_id){
                     }
 
                    img = "http://app.apiqroo.com.mx/puertos/"+ img +".JPG"
-                   let img_code = "<img id=\"port_img\" src=\""+img+"\" alt=\"\">";
+                   let img_code = "<img style=\"display:none;\" id=\"port_img_code\" src=\""+img+"\" alt=\"\">";
                    $('#port_name').html(response[0].PUER_SNAME);
                    $('#port_address').html(response[0].PUER_DIRECCION);
                    $('#port_text').html(response[0].PUER_TEXT);
@@ -353,7 +353,13 @@ function getPuertoDetail(port_id){
                           map: map
                     });
 
-                   $("#port_img").html(img_code);
+                   var html = $("#port_img").html();
+
+                   $("#port_img").html(html + img_code);
+                   $("#port_img_code").on('load',function(){
+                          $("#port_img_code").show();
+                          $(".wrapper").hide();
+                   });
                   
                   
                 },
