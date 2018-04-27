@@ -12,8 +12,13 @@
               </div>
         </div>
         <div class="page-content">
-          <div class="profile-image">
-          <img id="port_img" src="img/api.jpg" alt="">
+          <div class="profile-image" id="port_img">
+            <div class="wrapper">
+            <div class="wrapper-cell">
+              <div class="image"></div>
+            
+            </div>
+          </div>
           
         </div>
         <div class="content-block-title" id="port_name" style="font-size: 17px;">Puerto Juarez</div>
@@ -24,12 +29,12 @@
           <ul>
             <li>
               <a href="#" class="item-link item-content">
-                <div class="item-media"><i style="color: #f44336;" class="icon ion-close-circled"></i></div>
+                <div class="item-media" id="port_status_icon"></div>
                   <div class="item-inner">
-                    <div class="item-title">
-                      <div class="item-title" style="color: #f44336;">Puerto Cerrado</div>
+                    <div class="item-title" id="port_status">
+                      
                     </div>
-                  <div class="item-subtitle">No se permite la navegación</div>
+                  <div class="item-subtitle" id="port-flag-description"></div>
                 </div>
               </a>
             </li>
@@ -38,7 +43,7 @@
                 <div class="item-media"><i class="icon ion-android-call"></i></div>
                   <div class="item-inner">
                     <div class="item-title">
-                      <div class="item-title">732-757-2923</div>
+                      <div class="item-title" id="port_phone"></div>
                     </div>
                   <div class="item-subtitle">Telefono</div>
                 </div>
@@ -51,11 +56,8 @@
                     <div class="item-title">
                       <div class="item-title">Reseña</div>
                     </div>
-                  <div class="item-subtitle" style="white-space: initial;">Se ubica a la altura de 5 Kilómetros al norte de la Ciudad de Cancún Estado de Quintana Roo. Puerto Juárez se distingue por su vocación eminentemente turística, que es el principal punto de embarque de los pasajeros que viajan a bordo de las embarcaciones que cubren las rutas hacia Isla Mujeres y de los operadores de tours que ofrecen paseos hacia el mismo destino o las islas cercanas.
-
-Actualmente punto de embarque de los Galeones Capitan-Hook, tour con show pirata a bordo.
-
- </div>
+                  <div class="item-subtitle" id="port_text" style="white-space: initial;     text-align: justify;">
+                  </div>
                 </div>
               </a>
             </li>
@@ -64,7 +66,7 @@ Actualmente punto de embarque de los Galeones Capitan-Hook, tour con show pirata
                 <div class="item-media"><i class="icon ion-android-home"></i></div>
                   <div class="item-inner">
                     <div class="item-title">
-                      <div class="item-title" style="white-space: initial;">SM 84, MZ 2 LOTE 4 Y 5. COL. PUERTO JUAREZ, CP. 77520, CANCÚN QUINTANA ROO</div>
+                      <div class="item-title" style="white-space: initial;" id="port_address" ></div>
                     </div>
                   <div class="item-subtitle">Dirección</div>
                 </div>
@@ -77,7 +79,7 @@ Actualmente punto de embarque de los Galeones Capitan-Hook, tour con show pirata
                     <div class="item-title">
                       <div class="item-title">Horarios</div>
                     </div>
-                  <div class="item-subtitle">7:00 am - 5:00 pm</div>
+                  <div class="item-subtitle" id="port_horario"></div>
                 </div>
               </a>
             </li>

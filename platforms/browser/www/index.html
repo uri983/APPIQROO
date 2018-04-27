@@ -455,6 +455,62 @@ h3 {padding: 0; margin: 0;}
         height: 400px;
         width: 100%;
        }
+
+
+       .wrapper-cell {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+@-webkit-keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+.animated-background, .image, .text-line {
+  -webkit-animation-duration: 1.25s;
+          animation-duration: 1.25s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: placeHolderShimmer;
+          animation-name: placeHolderShimmer;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  background: #F6F6F6;
+  background: linear-gradient(to right, #F6F6F6 8%, #F0F0F0 18%, #F6F6F6 33%);
+  background-size: 800px 104px;
+  height: 96px;
+  position: relative;
+}
+
+.image {
+     height: 250px;
+     width: 100%;
+}
+
+.text {
+  margin-left: 20px;
+}
+
+.text-line {
+  height: 10px;
+  width: 230px;
+  margin: 4px 0;
+}
 </style>
   </head>
   <body>
