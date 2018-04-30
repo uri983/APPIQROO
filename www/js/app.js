@@ -246,11 +246,18 @@ function getNewsDetail(news_id){
                   $('.post-date').html(response[0].post_date);
                   $('#post-content').html(jQuery(res).text());
                   $('#post-title').html(response[0].post_title);
-                  $("#post-img").attr("src",img);
+                  //$("#post-img").attr("src",img);
 
                   localStorage.title = response[0].post_title;
                   localStorage.url   = response[0].guid;
                   localStorage.img   = img;
+                  var img_code="<img alt=\"\" id=\"post_img_code\" src=\""+img+"\">";
+                  var html = $("#post_img").html();
+                  $("#post_img").html(html + img_code);
+                   $("#post_img_code").on('load',function(){
+                      $("#post_img_code").show();
+                      $(".wrapper").hide();
+                   });
                   SpinnerPlugin.activityStop();
                   
                   
