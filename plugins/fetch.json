@@ -46,5 +46,13 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "cordova-plugin-awesome-shared-preferences": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-awesome-shared-preferences"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

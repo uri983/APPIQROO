@@ -10,6 +10,7 @@ var app = new Framework7({
 });
 
 var $$ = Dom7;
+var sharedPreferences = window.plugins.SharedPreferences.getInstance('settings');
 
 var mainView = app.addView('.view-main', {
   dynamicNavbar: true
@@ -28,6 +29,8 @@ $$(document).on('DOMContentLoaded', function (e) {
 })
 
 $$(document).on('deviceready', function() {
+
+
   
 });
 

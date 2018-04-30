@@ -1,0 +1,126 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-awesome-shared-preferences",
+        "scope": null,
+        "escapedName": "cordova-plugin-awesome-shared-preferences",
+        "name": "cordova-plugin-awesome-shared-preferences",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\xampp\\htdocs\\APPIQROO\\node_modules"
+    ]
+  ],
+  "_from": "cordova-plugin-awesome-shared-preferences@latest",
+  "_id": "cordova-plugin-awesome-shared-preferences@0.1.0",
+  "_inCache": true,
+  "_location": "/cordova-plugin-awesome-shared-preferences",
+  "_nodeVersion": "6.12.2",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/cordova-plugin-awesome-shared-preferences-0.1.0.tgz_1517244668121_0.34386308351531625"
+  },
+  "_npmUser": {
+    "name": "adriano.digiovanni",
+    "email": "me@adrianodigiovanni.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-awesome-shared-preferences",
+    "scope": null,
+    "escapedName": "cordova-plugin-awesome-shared-preferences",
+    "name": "cordova-plugin-awesome-shared-preferences",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-awesome-shared-preferences/-/cordova-plugin-awesome-shared-preferences-0.1.0.tgz",
+  "_shasum": "664ac8ee0186c8ae15e6e6f03a4791989f2ea3c9",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-awesome-shared-preferences",
+  "_where": "C:\\xampp\\htdocs\\APPIQROO\\node_modules",
+  "author": {
+    "name": "Adriano Di Giovanni",
+    "email": "me@adrianodigiovanni.com",
+    "url": "http://adrianodigiovanni.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/adriano-di-giovanni/cordova-plugin-shared-preferences/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-shared-preferences",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "dependencies": {},
+  "description": "Shared preferences for Cordova. Save and retrieve persistent key-value pairs of any Javascript data type.",
+  "devDependencies": {
+    "eslint": "^4.15.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-prettier": "^2.5.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.14.3",
+    "jsdoc-to-markdown": "^4.0.1",
+    "lint-staged": "^6.1.0",
+    "prettier": "^1.10.2"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dist": {
+    "shasum": "664ac8ee0186c8ae15e6e6f03a4791989f2ea3c9",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-awesome-shared-preferences/-/cordova-plugin-awesome-shared-preferences-0.1.0.tgz"
+  },
+  "gitHead": "01f92c8835b7102ee710c3bb3feeb1ee57fa2ca0",
+  "homepage": "https://github.com/adriano-di-giovanni/cordova-plugin-shared-preferences#readme",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "shared",
+    "preferences"
+  ],
+  "license": "MIT",
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "adriano.digiovanni",
+      "email": "me@adrianodigiovanni.com"
+    }
+  ],
+  "name": "cordova-plugin-awesome-shared-preferences",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adriano-di-giovanni/cordova-plugin-shared-preferences.git"
+  },
+  "scripts": {
+    "docs": "jsdoc2md --template README.hbs www/index.js > README.md",
+    "precommit": "lint-staged && npm run docs && git add README.md"
+  },
+  "version": "0.1.0"
+}

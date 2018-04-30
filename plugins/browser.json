@@ -7,6 +7,9 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-awesome-shared-preferences": {
+            "PACKAGE_NAME": "com.apiqroo.main.app"
+        },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.apiqroo.main.app"
         },

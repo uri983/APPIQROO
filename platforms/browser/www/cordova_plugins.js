@@ -1,6 +1,14 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
+        "file": "plugins/cordova-plugin-awesome-shared-preferences/www/index.js",
+        "id": "cordova-plugin-awesome-shared-preferences.SharedPreferences",
+        "pluginId": "cordova-plugin-awesome-shared-preferences",
+        "clobbers": [
+            "window.plugins.SharedPreferences"
+        ]
+    },
+    {
         "file": "plugins/cordova-plugin-spinner/www/spinner-plugin.js",
         "id": "cordova-plugin-spinner.SpinnerPlugin",
         "pluginId": "cordova-plugin-spinner",
@@ -34,6 +42,7 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
+    "cordova-plugin-awesome-shared-preferences": "0.1.0",
     "cordova-plugin-console": "1.0.7",
     "cordova-plugin-spinner": "1.1.0",
     "cordova-plugin-statusbar": "1.0.1",

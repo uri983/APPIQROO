@@ -11,11 +11,13 @@
             "cordova-plugin-spinner": {},
             "cordova-plugin-statusbar": {},
             "cordova-plugin-whitelist": {},
-            "cordova-plugin-x-socialsharing": {}
+            "cordova-plugin-x-socialsharing": {},
+            "cordova-plugin-awesome-shared-preferences": {}
         }
     },
     "dependencies": {
         "cordova-browser": "^4.1.0",
+        "cordova-plugin-awesome-shared-preferences": "^0.1.0",
         "cordova-plugin-console": "~1.0.1",
         "cordova-plugin-spinner": "~1.1.0",
         "cordova-plugin-statusbar": "~1.0.1",
