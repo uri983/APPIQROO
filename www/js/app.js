@@ -357,8 +357,8 @@ function getPuertoDetail(port_id){
 
                    $("#port_img").html(html + img_code);
                    $("#port_img_code").on('load',function(){
-                          $("#port_img_code").show();
-                          $(".wrapper").hide();
+                      $("#port_img_code").show();
+                      $(".wrapper").hide();
                    });
                   
                   
