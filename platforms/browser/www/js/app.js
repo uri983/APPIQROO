@@ -6,11 +6,19 @@ var app = new Framework7({
   pushState: true,
   swipeBackPage:false,
   swipePanel:false,
-  material: true
+  material: true,
+  routes: [
+    {
+    path: '/',
+    async(routeTo, routeFrom, resolve, reject) {
+      alert('ruta');
+    }
+  },
+  ],
 });
 
 var $$ = Dom7;
-var sharedPreferences = window.plugins.SharedPreferences.getInstance('settings');
+
 
 var mainView = app.addView('.view-main', {
   dynamicNavbar: true

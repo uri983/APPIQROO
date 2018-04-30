@@ -24,6 +24,9 @@
         },
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.apiqroo.main.app"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.apiqroo.main.app"
         }
     },
     "dependent_plugins": {

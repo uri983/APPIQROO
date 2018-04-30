@@ -36,6 +36,12 @@
         },
         "cordova-plugin-googlemaps": {
             "PACKAGE_NAME": "com.apiqroo.main.app"
+        },
+        "cordova-plugin-awesome-shared-preferences": {
+            "PACKAGE_NAME": "com.apiqroo.main.app"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.apiqroo.main.app"
         }
     },
     "dependent_plugins": {},
@@ -285,6 +291,28 @@
             "id": "cordova-plugin-googlemaps.CordovaGoogleMaps",
             "pluginId": "cordova-plugin-googlemaps",
             "runs": true
+        },
+        {
+            "file": "plugins/cordova-plugin-awesome-shared-preferences/www/index.js",
+            "id": "cordova-plugin-awesome-shared-preferences.SharedPreferences",
+            "pluginId": "cordova-plugin-awesome-shared-preferences",
+            "clobbers": [
+                "window.plugins.SharedPreferences"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+            "id": "cordova-plugin-splashscreen.SplashScreen",
+            "pluginId": "cordova-plugin-splashscreen",
+            "clobbers": [
+                "navigator.splashscreen"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-splashscreen/src/browser/SplashScreenProxy.js",
+            "id": "cordova-plugin-splashscreen.SplashScreenProxy",
+            "pluginId": "cordova-plugin-splashscreen",
+            "runs": true
         }
     ],
     "plugin_metadata": {
@@ -297,6 +325,8 @@
         "cordova-plugin-spinner": "1.1.0",
         "cordova-plugin-x-socialsharing": "5.3.2",
         "es6-promise-plugin": "4.1.0",
-        "cordova-plugin-googlemaps": "2.2.9"
+        "cordova-plugin-googlemaps": "2.2.9",
+        "cordova-plugin-awesome-shared-preferences": "0.1.0",
+        "cordova-plugin-splashscreen": "5.0.2"
     }
 }
