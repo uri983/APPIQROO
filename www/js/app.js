@@ -38,7 +38,7 @@ $$(document).on('DOMContentLoaded', function (e) {
 
 $$(document).on('deviceready', function() {
 
-
+    app.loginScreen();
   
 });
 
