@@ -37,8 +37,27 @@ $$(document).on('DOMContentLoaded', function (e) {
 })
 
 $$(document).on('deviceready', function() {
-
+  if(localStorage.user_mail == undefined){
     app.loginScreen();
+  }else{
+    
+  } 
+
+  $('#btn_login').on('click',function (e) {
+       localStorage.user_mail     = $('#username').val();
+       localStorage.user_password = $('#password').val();
+       alert('Bienvenido: ' + localStorage.user_mail );
+       app.closeModal();
+        
+  })
+
+  $("#logout").on('click',function (e) {
+       localStorage.removeItem("user_mail");
+       localStorage.removeItem("user_password");
+       app.loginScreen();
+        
+  })
+    
   
 });
 
