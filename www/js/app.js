@@ -44,11 +44,15 @@ $$(document).on('deviceready', function() {
   } 
 
   $('#btn_login').on('click',function (e) {
-       localStorage.user_mail     = $('#username').val();
-       localStorage.user_password = $('#password').val();
-       alert_dialog('Inicio de sesión correcto','Bienvenido','ok',function(){alert('hola')});
-       app.alert('Iniciaste sesión como: '+ localStorage.user_mail, 'Bienvenido');
-       app.closeModal();
+       
+
+       if( $('#username').val() == "" ||  $('#password').val() == "" ){
+          alert_dialog('No dejes campos vacíos','Error','ok',function(){});  
+       }else{
+          localStorage.user_mail     = $('#username').val();
+          localStorage.user_password = $('#password').val(); 
+          alert_dialog('Inicio de sesión correcto','Bienvenido','ok', app.closeModal());
+       }
         
   })
 
