@@ -12,10 +12,19 @@
 function alert_dialog(message,title,btnName,callback){
   navigator.notification.alert(
     message,  // message
-    callback,         // callback
-    title,            // title
-    btnName                  // buttonName
+    callback, // callback
+    title,    // title
+    btnName   // buttonName
   );
 
 } 
+
+function alert_dialog_confirm(message,title,btnName,callback){
+  navigator.notification.confirm(
+    message,  // message
+    callback, // callback
+    title,    // title
+    btnName
+  );
+}
 

@@ -45,9 +45,8 @@ $$(document).on('deviceready', function() {
 
   $('#btn_login').on('click',function (e) {
        
-
        if( $('#username').val() == "" ||  $('#password').val() == "" ){
-          alert_dialog('No dejes campos vacíos','Error','ok',function(){});  
+          alert_dialog('No dejes campos vacíos','Error en inicio de sesión','ok',function(){});  
        }else{
           localStorage.user_mail     = $('#username').val();
           localStorage.user_password = $('#password').val(); 
@@ -57,10 +56,14 @@ $$(document).on('deviceready', function() {
   })
 
   $("#logout").on('click',function (e) {
-       localStorage.removeItem("user_mail");
-       localStorage.removeItem("user_password");
-       app.loginScreen();
-        
+       alert_dialog_confirm('Puedes volver cuando quieras',
+        '¿Deseas cerrar tu sesión?',
+        ['Continuar','Cerrar'],
+        function(){
+          localStorage.removeItem("user_mail");
+          localStorage.removeItem("user_password");
+          app.loginScreen(); 
+        });     
   })
     
   
