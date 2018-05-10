@@ -48,9 +48,7 @@ $$(document).on('deviceready', function() {
        if( $('#username').val() == "" ||  $('#password').val() == "" ){
           alert_dialog('No dejes campos vacíos','Error en inicio de sesión','ok',function(){});  
        }else{
-          localStorage.user_mail     = $('#username').val();
-          localStorage.user_password = $('#password').val(); 
-          alert_dialog('Inicio de sesión correcto','Bienvenido','ok', app.closeModal());
+          login($('#username').val(),$('#password').val());
        }
         
   })
@@ -58,11 +56,14 @@ $$(document).on('deviceready', function() {
   $("#logout").on('click',function (e) {
        alert_dialog_confirm('Puedes volver cuando quieras',
         '¿Deseas cerrar tu sesión?',
-        ['Continuar','Cerrar'],
-        function(){
-          localStorage.removeItem("user_mail");
-          localStorage.removeItem("user_password");
-          app.loginScreen(); 
+        ['Continuar','Cancelar'],
+        function(buttonIndex){
+          if(buttonIndex == 1){
+            localStorage.removeItem("user_mail");
+            localStorage.removeItem("user_password");
+            app.loginScreen(); 
+          }
+         
         });     
   })
     
@@ -193,12 +194,37 @@ $$('.notification-search').on('click', function () {
 *                                *
 **********************************/
 
-function initMap() {
+function login(username,password) {
+SpinnerPlugin.activityStart("Cargando...");
+  $$.ajax({
+          url: 'http://app.apiqroo.com.mx/user/login',
+          method: 'POST',
+          dataType: 'json',
+          data:{'username':username,'password':password},
+          success: function(response){
+                 
+                 if(response.success == true){
+                  localStorage.user_mail     = $('#username').val();
+                  localStorage.user_password = $('#password').val(); 
+                  alert_dialog(response.message,'Bienvenido','ok', app.closeModal());
+
+                 }else{
+                  alert_dialog(response.message,'Error en inicio de sesión','ok', function(){});
+                 }
+                 SpinnerPlugin.activityStop();
+          },
+          error: function(xhr, status){
+            alert('Error: '+JSON.stringify(xhr));
+            alert('ErrorStatus: '+JSON.stringify(status));
+          }
+    });
         
 }
 
 
+function initMap(){
 
+}
 
 
 
