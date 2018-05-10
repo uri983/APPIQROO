@@ -81,6 +81,11 @@ $$(document).on('page:index', function (e) {
 
 
 app.onPageInit('index', function (page) {
+  if(localStorage.user_mail == undefined){
+    app.loginScreen();
+  }else{
+    
+  } 
     // Do something here for "about" page
     listNews(0);
 
