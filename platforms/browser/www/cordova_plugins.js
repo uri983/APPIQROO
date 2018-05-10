@@ -9,6 +9,22 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/cordova-plugin-dialogs/www/notification.js",
+        "id": "cordova-plugin-dialogs.notification",
+        "pluginId": "cordova-plugin-dialogs",
+        "merges": [
+            "navigator.notification"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-dialogs/www/browser/notification.js",
+        "id": "cordova-plugin-dialogs.notification_browser",
+        "pluginId": "cordova-plugin-dialogs",
+        "merges": [
+            "navigator.notification"
+        ]
+    },
+    {
         "file": "plugins/cordova-plugin-spinner/www/spinner-plugin.js",
         "id": "cordova-plugin-spinner.SpinnerPlugin",
         "pluginId": "cordova-plugin-spinner",
@@ -58,6 +74,7 @@ module.exports.metadata =
 {
     "cordova-plugin-awesome-shared-preferences": "0.1.0",
     "cordova-plugin-console": "1.0.7",
+    "cordova-plugin-dialogs": "2.0.1",
     "cordova-plugin-spinner": "1.1.0",
     "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-statusbar": "1.0.1",
