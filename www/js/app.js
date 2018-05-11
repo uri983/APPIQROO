@@ -36,7 +36,12 @@ $$(document).on('DOMContentLoaded', function (e) {
 
 })
 
+
+
 $$(document).on('deviceready', function() {
+
+  document.addEventListener("backbutton", onBackKeyDown, false);
+ 
   if(localStorage.user_mail == undefined){
     app.loginScreen();
   }else{
@@ -66,25 +71,32 @@ $$(document).on('deviceready', function() {
          
         });     
   })
+
+   $('#open_register').on('click',function (e) {
+       
+      app.popup.open('.popup-register', true);
+  })
     
   
 });
 
 ////////// CUSTOM JS ON OTHER PAGES //////////
 
-$$(document).on('page:index', function (e) {
+function onBackKeyDown() {
+  var cpage = mainView.activePage;
+  var cpagename = cpage.name;
+  console.log(cpagename);
+  if (cpagename == "register"){
+    mainView.router.loadPage({url:'index.html', ignoreCache:true, reload:true });
+  }
+}
 
+
+
+var mainCallback = app.onPageInit('index', function (page) {
   
-
-});
-
-
-
-app.onPageInit('index', function (page) {
   if(localStorage.user_mail == undefined){
     app.loginScreen();
-  }else{
-    
   } 
     // Do something here for "about" page
     listNews(0);
@@ -122,6 +134,9 @@ app.onPageInit('naviera_list', function (page) {
     // Do something here for "about" page
     
 });
+
+
+
 
 
 
