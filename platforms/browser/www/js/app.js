@@ -87,7 +87,8 @@ function onBackKeyDown() {
   var cpagename = cpage.name;
   console.log(cpagename);
   if (cpagename == "register"){
-    mainView.router.loadPage({url:'index.html', ignoreCache:true, reload:true });
+    //mainView.router.back();
+    //mainView.router.loadPage({url:'index.html', ignoreCache:true, reload:true });
   }
 }
 
