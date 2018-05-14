@@ -3,10 +3,10 @@
 ////////// APP CONFIGURATION //////////
 
 var app = new Framework7({
-  pushState: true,
+  pushState    : true,
   swipeBackPage:false,
-  swipePanel:false,
-  material: true,
+  swipePanel   :false,
+  material     : true,
   routes: [
     {
     path: '/',
@@ -44,6 +44,7 @@ $$(document).on('deviceready', function() {
  
   if(localStorage.user_mail == undefined){
     app.loginScreen();
+    //mainView.router.load(options)
   }else{
     
   } 
@@ -83,7 +84,7 @@ $$(document).on('deviceready', function() {
 ////////// CUSTOM JS ON OTHER PAGES //////////
 
 function onBackKeyDown() {
-  var cpage = mainView.activePage;
+  var cpage     = mainView.activePage;
   var cpagename = cpage.name;
   console.log(cpagename);
   if (cpagename == "register"){
@@ -218,8 +219,8 @@ $$('.notification-search').on('click', function () {
 function login(username,password) {
 SpinnerPlugin.activityStart("Cargando...");
   $$.ajax({
-          url: 'http://app.apiqroo.com.mx/user/login',
-          method: 'POST',
+          url     : 'http://app.apiqroo.com.mx/user/login',
+          method  : 'POST',
           dataType: 'json',
           data:{'username':username,'password':password},
           success: function(response){

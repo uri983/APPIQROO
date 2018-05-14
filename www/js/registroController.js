@@ -1,8 +1,8 @@
 
 
 app.onPageInit('register', function (page) {
-     $('#login').on('click',function (e) {
-       mainView.router.load({url:'/', force:true,ignoreCache:true});
+      $('#login').on('click',function (e) {
+       	  window.location="index.html";
       })
 });
 
