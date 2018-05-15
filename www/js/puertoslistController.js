@@ -23,7 +23,7 @@ function loadListPuerto(){
           url: 'http://app.apiqroo.com.mx/apis/listPuertos',
           method: 'POST',
           dataType: 'json',
-          data:{'user_email':'email@example.com','user_password':'123456'},
+          data:{'user_email':localStorage.user_mail,'user_password':localStorage.user_password},
           success: function(response){
                 console.log(response);
                 var html="";

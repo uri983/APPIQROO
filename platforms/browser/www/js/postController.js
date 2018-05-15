@@ -24,7 +24,7 @@ function getNewsDetail(news_id){
                 url: 'http://app.apiqroo.com.mx/apis/news_details',
                 method: 'POST',
                 dataType: 'json',
-                data:{'new_id':news_id,'user_email':'email@example.com','user_password':'123456'},
+                data:{'new_id':news_id,'user_email':localStorage.user_mail,'user_password':localStorage.user_password},
                 success: function(response){
                   //console.log(response);
                   var img = response[0].img.replace("dev.apiqroo.com.mx/v2017-v3", "www.apiqroo.com.mx");

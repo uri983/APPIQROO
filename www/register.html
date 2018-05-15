@@ -1,14 +1,14 @@
 <div class="pages">
     <div data-page="register" class="page">
-        <div class="navbar">
+        <!--<div class="navbar">
               <div class="navbar-inner">
                 <div class="left">
     
               </div>
-                <div class="center">Bienvenido</div>
+                <div class="center"></div>
               </div>
-        </div>
-        <div class="page-content">
+        </div>-->
+        <div style="padding-top: 0px !important;" class="page-content">
 
              <center style="background-color: #00a4c4;"><img class="contact-img" style="height: 40%; width: 50%;" src="img/logo-blanco.png" alt=""></center>
               
@@ -18,9 +18,17 @@
                   <ul>
                     <li class="item-content">
                       <div class="item-inner">
+                        <div class="item-title label">Nombre</div>
+                        <div class="item-input">
+                          <input type="text" name="user" id="user" placeholder="Ingresa tu nombre">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="item-content">
+                      <div class="item-inner">
                         <div class="item-title label">Correo</div>
                         <div class="item-input">
-                          <input type="text" name="username" id="username" placeholder="Ingresa tu correo electrónico">
+                          <input type="text" name="username_register" id="username_register" placeholder="Ingresa tu correo electrónico">
                         </div>
                       </div>
                     </li>
@@ -28,7 +36,15 @@
                       <div class="item-inner">
                         <div class="item-title label">Contraseña</div>
                         <div class="item-input">
-                          <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña">
+                          <input type="password" name="password_register" id="password_register" placeholder="Ingresa tu contraseña">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title label">Confirmar contraseña</div>
+                        <div class="item-input">
+                          <input type="password" name="conf_password" id="conf_password" placeholder="Ingresa nuevamente tu contraseña">
                         </div>
                       </div>
                     </li>
@@ -37,7 +53,7 @@
                 <div class="list-block">
                   <center>
                     <ul>
-                    <li><a href="#" id="btn_login" class="button button-fill" style="color: white !important;text-shadow: none !important;     background-color: #00a4c4; font-size: 16px;">Entrar</a></li>
+                    <li><a href="#" id="btn_register" class="button button-fill" style="color: white !important;text-shadow: none !important;     background-color: #00a4c4; font-size: 16px;">Registrar</a></li>
                   </ul>
                   </center>
                  

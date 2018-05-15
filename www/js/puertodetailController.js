@@ -38,7 +38,7 @@ function getPuertoDetail(port_id){
                 url: 'http://app.apiqroo.com.mx/apis/port_details',
                 method: 'POST',
                 dataType: 'json',
-                data:{'puerto_id':puerto_id,'user_email':'email@example.com','user_password':'123456'},
+                data:{'puerto_id':puerto_id,'user_email':localStorage.user_mail,'user_password':localStorage.user_password},
                 success: function(response){
                   console.log(response);
                   SpinnerPlugin.activityStop();

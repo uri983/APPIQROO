@@ -23,7 +23,7 @@ function loadArribos(){
                 url: 'http://app.apiqroo.com.mx/apis/arribos',
                 method: 'POST',
                 dataType: 'json',
-                 data:{'user_email':'email@example.com','user_password':'123456'},
+                 data:{'user_email':localStorage.user_mail,'user_password':localStorage.user_password},
                 success: function(response){
                 var html="";
                 var count = Object.keys(response).length;
