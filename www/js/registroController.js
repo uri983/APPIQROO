@@ -117,6 +117,7 @@ function postRegister(user,mail,password,password_confirm){
                   alert_dialog(response.message,'¡Éxito!','Continuar', function(){
                   localStorage.user_mail     = $('#username').val();
                   localStorage.user_password = $('#password').val(); 
+                  $('#username_menu').html(localStorage.user_mail);
                   window.location="index.html";
                   
                   });

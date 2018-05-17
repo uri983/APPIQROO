@@ -41,12 +41,13 @@ $$(document).on('DOMContentLoaded', function (e) {
 $$(document).on('deviceready', function() {
 
   document.addEventListener("backbutton", onBackKeyDown, false);
+
  
   if(localStorage.user_mail == undefined){
     app.loginScreen();
     //mainView.router.load(options)
   }else{
-    
+     $('#username_menu').html(localStorage.user_mail);
   } 
 
   $('#btn_login').on('click',function (e) {
@@ -228,6 +229,7 @@ SpinnerPlugin.activityStart("Cargando...");
                  if(response.success == true){
                   localStorage.user_mail     = $('#username').val();
                   localStorage.user_password = $('#password').val(); 
+                  $('#username_menu').html(localStorage.user_mail);
                   alert_dialog(response.message,'Bienvenido','ok', app.closeModal());
 
                  }else{
