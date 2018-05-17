@@ -74,6 +74,7 @@ $$(document).on('deviceready', function() {
             //app.loginScreen();
             $('#logout').hide(); 
             $('#login').show();
+            $('#username_menu').html("Iniciar Sesión");
           }
          
         });     
@@ -243,6 +244,8 @@ SpinnerPlugin.activityStart("Cargando...");
                   alert_dialog(response.message,'Bienvenido','ok', app.closeModal());
                   $('#logout').show(); 
                   $('#login').hide();
+                  $('#username_menu').html(localStorage.user_mail);
+
 
                  }else{
                   alert_dialog(response.message,'Error en inicio de sesión','ok', function(){});
