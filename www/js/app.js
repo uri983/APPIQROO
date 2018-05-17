@@ -40,13 +40,16 @@ $$(document).on('DOMContentLoaded', function (e) {
 
 $$(document).on('deviceready', function() {
 
-  document.addEventListener("backbutton", onBackKeyDown, false);
+
 
  
   if(localStorage.user_mail == undefined){
-    app.loginScreen();
+    $('#logout').hide();
+
+    //app.loginScreen();
     //mainView.router.load(options)
   }else{
+     $('#login').hide();
      $('#username_menu').html(localStorage.user_mail);
   } 
 
@@ -79,6 +82,11 @@ $$(document).on('deviceready', function() {
       app.popup.open('.popup-register', true);
   })
     
+
+    $('#login').on('click',function (e) {
+       
+      app.loginScreen();
+  })
   
 });
 
@@ -99,7 +107,7 @@ function onBackKeyDown() {
 var mainCallback = app.onPageInit('index', function (page) {
   
   if(localStorage.user_mail == undefined){
-    app.loginScreen();
+    //app.loginScreen();
   } 
     // Do something here for "about" page
     listNews(0);
