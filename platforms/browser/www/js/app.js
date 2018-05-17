@@ -71,7 +71,9 @@ $$(document).on('deviceready', function() {
           if(buttonIndex == 1){
             localStorage.removeItem("user_mail");
             localStorage.removeItem("user_password");
-            app.loginScreen(); 
+            //app.loginScreen();
+            $('#logout').hide(); 
+            $('#login').show();
           }
          
         });     
@@ -239,6 +241,8 @@ SpinnerPlugin.activityStart("Cargando...");
                   localStorage.user_password = $('#password').val(); 
                   $('#username_menu').html(localStorage.user_mail);
                   alert_dialog(response.message,'Bienvenido','ok', app.closeModal());
+                  $('#logout').show(); 
+                  $('#login').hide();
 
                  }else{
                   alert_dialog(response.message,'Error en inicio de sesión','ok', function(){});
