@@ -1,7 +1,7 @@
 app.onPageInit('naviera-list', function (page) {
     // Do something here for "about" page
   let ruta = page.query.ruta;
-  alert(ruta);
+  
    loadListNavieras(ruta);
 
 });
@@ -49,7 +49,7 @@ function loadListNavieras(ruta){
                       
                         
                   }
-                 alert(html);
+                
                   $('#lista_navieras').html(html);
                  SpinnerPlugin.activityStop();
           },
