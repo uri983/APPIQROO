@@ -36,7 +36,7 @@ function loadListNavieras(ruta){
                        
                        html+= "<li>";
                        html+= "   <a href=\"horarios-list.html?ruta_nav="+response[j].RUNA_RUTA_NAVIERA+"\" class=\"item-link item-content\">";
-                       html+= "     <div class=\"item-media\"></div>";
+                       html+= "     <div class=\"item-media\"><img src=\"http://app.apiqroo.com.mx/navieras/"+response[j].NAV_LOGO+"\" width=\"44\" alt=\"\"></div>";
                        html+= "       <div class=\"item-inner\">";
                        html+= "          <div class=\"item-title-row\">";
                        html+= "           <div class=\"item-title\">"+ response[j].NAV_NOMBRE +"</div>";
