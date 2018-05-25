@@ -50,7 +50,7 @@ function loadListNavieras(ruta){
                         
                   }
                  
-                  $('#nav_list').html(html);
+                  $('#lista_navieras').html(html);
                  SpinnerPlugin.activityStop();
           },
           error: function(xhr, status){
