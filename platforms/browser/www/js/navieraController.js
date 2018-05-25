@@ -1,4 +1,5 @@
 app.onPageInit('naviera-list', function (page) {
+  alert('si llega');
     // Do something here for "about" page
   let ruta = page.query.ruta;
   
