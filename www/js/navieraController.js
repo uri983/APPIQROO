@@ -49,7 +49,7 @@ function loadListNavieras(ruta){
                       
                         
                   }
-                 alert(html):
+                 alert(html);
                   $('#lista_navieras').html(html);
                  SpinnerPlugin.activityStop();
           },
