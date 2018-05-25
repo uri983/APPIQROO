@@ -1,4 +1,4 @@
-"use strict";
+
 
 ////////// APP CONFIGURATION //////////
 
@@ -107,7 +107,7 @@ function onBackKeyDown() {
 
 
 
-var mainCallback = app.onPageInit('index', function (page) {
+app.onPageInit('index', function (page) {
   
   if(localStorage.user_mail == undefined){
     //app.loginScreen();
@@ -144,10 +144,7 @@ var mainCallback = app.onPageInit('index', function (page) {
 }).trigger();
 
 
-app.onPageInit('naviera_list', function (page) {
-    // Do something here for "about" page
-    
-});
+
 
 
 
