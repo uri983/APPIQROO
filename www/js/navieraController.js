@@ -1,7 +1,7 @@
 app.onPageInit('naviera-list', function (page) {
     // Do something here for "about" page
   let ruta = page.query.ruta;
-  
+  alert(ruta);
    loadListNavieras(ruta);
 
 });
