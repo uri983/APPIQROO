@@ -264,6 +264,17 @@ function initMap(){
 
 
 
+app.onPageInit('naviera-list', function (page) {
+  alert('gola');
+    // Do something here for "about" page
+  let ruta = page.query.ruta;
+  
+   loadListNavieras(ruta);
+
+});
+
+
+
 
 
 
