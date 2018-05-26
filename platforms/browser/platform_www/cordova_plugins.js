@@ -73,7 +73,6 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "cordova-plugin-awesome-shared-preferences": "0.1.0",
-    "cordova-plugin-console": "1.0.7",
     "cordova-plugin-dialogs": "2.0.1",
     "cordova-plugin-spinner": "1.1.0",
     "cordova-plugin-splashscreen": "5.0.2",

@@ -1,31 +1,29 @@
 {
-    "name": "com.apiqroo.main.app",
-    "version": "1.0.0",
-    "displayName": "APPIQROO",
-    "cordova": {
-        "platforms": [
-            "browser"
-        ],
-        "plugins": {
-            "cordova-plugin-console": {},
-            "cordova-plugin-spinner": {},
-            "cordova-plugin-statusbar": {},
-            "cordova-plugin-whitelist": {},
-            "cordova-plugin-x-socialsharing": {},
-            "cordova-plugin-awesome-shared-preferences": {},
-            "cordova-plugin-splashscreen": {},
-            "cordova-plugin-dialogs": {}
-        }
-    },
-    "dependencies": {
-        "cordova-browser": "^4.1.0",
-        "cordova-plugin-awesome-shared-preferences": "^0.1.0",
-        "cordova-plugin-console": "~1.0.1",
-        "cordova-plugin-dialogs": "^2.0.1",
-        "cordova-plugin-spinner": "~1.1.0",
-        "cordova-plugin-splashscreen": "^5.0.2",
-        "cordova-plugin-statusbar": "~1.0.1",
-        "cordova-plugin-whitelist": "~1.2.0",
-        "cordova-plugin-x-socialsharing": "~5.3.2"
+  "name": "com.apiqroo.main.app",
+  "version": "1.0.0",
+  "displayName": "APPIQROO",
+  "cordova": {
+    "platforms": [
+      "browser"
+    ],
+    "plugins": {
+      "cordova-plugin-spinner": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-x-socialsharing": {},
+      "cordova-plugin-awesome-shared-preferences": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-dialogs": {}
     }
+  },
+  "dependencies": {
+    "cordova-browser": "^5.0.3",
+    "cordova-plugin-awesome-shared-preferences": "^0.1.0",
+    "cordova-plugin-dialogs": "^2.0.1",
+    "cordova-plugin-spinner": "~1.1.0",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-statusbar": "~1.0.1",
+    "cordova-plugin-whitelist": "~1.2.0",
+    "cordova-plugin-x-socialsharing": "~5.3.2"
+  }
 }
