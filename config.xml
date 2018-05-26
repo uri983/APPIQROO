@@ -4,7 +4,7 @@
     <description>
         Aplicación oficial de la APIQROO.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
+    <author email="programadores@apiqroo.com.mx" href="http://www.apiqroo.com.mx">
         Gerencia de Informática
     </author>
     <content src="index.html" />
@@ -23,6 +23,9 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <preference name="BackupWebStorage" value="none" />
+    </platform>
+    <platform name="android">
+    <preference name="android-debuggable" value="false" />` 
     </platform>
     <preference name="DisallowOverscroll" value="true" />
     <preference name="phonegap-version" value="cli-8.0.0" />
