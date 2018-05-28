@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#2196f3">
+    <title>APIQROO</title>
+    <link rel="stylesheet" href="css/framework7.material.min.css">
+    <link rel="stylesheet" href="css/framework7.material.colors.min.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+
+<!-- Top Navbar-->
+
+
+<link href="http://servicios.apiqroo.com.mx/calendario-cruceros/assets/css/table.css" rel="stylesheet" type="text/css" >
+
+
+<style id='style-inline-css' type='text/css'>
+
+    ul.main { 
+  list-style: none;
+  max-width: 90%;
+  margin: 20px auto;
+}
+h3 {padding: 0; margin: 0;}
+
+
+.date {
+  width: 17%;
+  padding: 5% 1% 0 0 ;
+  float: left;
+}
+
+.date h3 {
+  font-size: 1.5em;
+}
+
+.date p {
+  font-size: .8em;
+}
+
+.events {
+  float: left;
+  width: 80%;
+  border-left: 1px solid #ccc;
+  margin-top: 10%;
+  padding-top: 3%;
+}
+
+.events-detail {
+  max-width: 550px;
+}
+
+.events-detail li{
+  padding: 10px;
+  border-bottom: 1px dashed #ccc;
+  line-height: 22px;
+  transition: ease .4s all;
+}
+
+.events-detail li:hover {
+  background: #e9e9e9;
+}
+
+.event-time {
+  font-weight: 900;
+}
+
+.events-detail li a {
+  text-decoration: none;
+  color: #444;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.event-location {
+    font-size: .8em;
+    color: tomato;
+    margin-left: 70px;
+}
+
+
+
+@media all and (max-width: 641px) {
+    .date {
+      width: 100%;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+  
+  .events {
+    border:none;
+    width: 100%;
+    margin-top: 0;
+  }
+  
+  .events-detail {
+    padding: 0;
+  }
+  
+  li.date p {
+    margin:0;
+  }
+}
+    
+    @media (min-width: 1200px)
+        .row {
+             margin-left: 0px;
+        }
+
+    .row {
+         margin-left: 0px; 
+    }
+
+    h1, .h1-size, .entry-title.h1-size {
+        text-align: center;
+        padding: 2px;
+        border-radius: 3px;
+        color: #2C3841;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+
+    .page-title.content-left .wf-td, .page-title.content-right .wf-td, .page-title.title-center .wf-td {
+        display: block;
+        text-align: center;
+        margin-top: -20px;
+    }
+
+
+
+    #main {
+        margin: auto;
+        padding:0 20px;
+        width: 960px;
+    }
+    #content{
+
+    }
+    .content ul {
+        list-style: none;
+    }
+
+
+
+    #footer.solid-bg {
+
+        background-size: cover;
+    }
+
+    #phantom {
+        background-image: 'http://dev.apiqroo.com.mx/v2017-v3/wp-content/uploads/2017/01/header.png';
+    }
+
+
+
+
+    .footer .widget, .footer .tp_recent_tweets li {
+        font-size: 15px;
+        line-height: 10px;
+    }
+
+    .content table, .content td, .content th {
+        border-color: #ffffff;
+    }
+
+    a:link
+    {
+        text-decoration:none;
+    }
+
+
+
+
+    .transparencia-text {
+        text-align: center;
+        padding: 2px;
+        border-radius: 3px;
+        color: #00b2b9;
+        font-size: 24px;
+        font-weight: bold;
+        font-family:'Arial Black';
+        line-height: 1;
+
+    }
+
+    .transparenciadesc-text {
+        text-align: center;
+        padding: 2px;
+        border-radius: 3px;
+        color: #6f6f6e;
+        font-size: 18px;
+
+        font-family:'Arial';
+
+    }
+
+    .flange-text {
+        text-align: center;
+        padding: 2px;
+        border-radius: 3px;
+        color: #FFFFFF;
+        font-size: 24px;
+        font-weight: bold;
+        font-family:'Arial Black';
+
+    }
+    .flange {
+        min-height: 0px;
+        padding-top: 19px;
+        padding-bottom: 19px;
+        margin-bottom: 20px;
+        background-color: #11B2B8;
+
+
+
+
+        /* -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05); */
+        /* box-shadow: inset 0 1px 1px rgba(0,0,0,.05); */
+        width: 100%;
+
+
+    }
+
+    .footer .widget, .footer .tp_recent_tweets li {
+
+        width: 100%;
+    }
+
+    #page.boxed {
+        max-width: 1170px;
+        margin: 0 auto;
+        /* -webkit-box-shadow: 0 0 0px rgba(0,0,0,.15); */
+        /* box-shadow: 0 0 0px rgba(0,0,0,.15); */
+    }
+
+
+    #footer .wf-container-footer {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .items-grid .wf-cell {
+        margin-bottom: 5px;
+    }
+
+
+    #bottom-bar {
+
+        background-color: #009AC0;
+    }
+
+    a:hover {
+        color: #00b2b9;
+    }
+
+
+
+
+    .Restricted__footer .Footer {
+
+        vertical-align: bottom;
+        width: 100%;
+    }
+    .Footer {
+        position: relative;
+        padding: 32px 0;
+        padding: 2rem 0;
+        text-align: center;
+    }
+
+    .Footer__topMenu {
+        width: 100%;
+    }
+
+
+    .Restricted {
+        background: linear-gradient(180deg, rgb(3, 95, 141) 0%, rgb(34, 64, 153) 50%);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        color: white;
+        text-align: center;
+        display: table;
+        min-width: 102.4rem;
+    }
+
+    .Footer__topMenu__item {
+        line-height: 64px;
+        line-height: 4rem;
+        display: inline;
+        margin-left: 32px;
+        margin-left: 2rem;
+    }
+
+    .Footer__copyrightText {
+        color: #000000;
+    }
+    .Footer__copyrightText {
+        font-size: 12px;
+        font-size: 1.2rem;
+        line-height: 35.2px;
+        line-height: 2.2rem;
+    }
+
+    .menu_footer, .menu_footer:visited {
+        font-weight: 400;
+        text-decoration: none;
+        color: #e94290;
+        font-family: Arial;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .Footer__copyrightText{
+        font-weight: 400;
+        text-decoration: none;
+        color: #009bc1;
+        font-family: Arial;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1.5;
+
+    }
+
+    .Footer__bottomMenu{
+
+        display: inline;
+    }
+
+    .legal{
+
+        display: inline-block;
+    }
+
+
+
+    .api{
+        float: none;
+    }
+    .social{
+        float: none;
+    }
+
+    @media only screen and (min-width:320px) and (max-width:479px) {
+        #main {
+            padding: 0px;
+            width: 100%;
+        }
+        .indicador{
+            text-align: left !important;
+        }
+        .h1-size{
+            font-size: 14px;
+            font-weight: 700;
+        }
+        h4{
+            font-size: 99%;
+        }
+        .subtitle{
+            font-size: 14px !important;
+            font-weight: 700;
+            color: #11B2B8;
+            margin-bottom: 3px;
+            margin-top: 3px;
+        }
+    }
+
+    @media only screen and (min-width:480px) and (max-width:679px) {
+        #main {
+            width: 100%;
+            padding: 0px 20px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .api{
+            float: left;
+            margin-left: 15px;
+        }
+
+        .social{
+            float: right;
+            margin-right:  15px;
+        }
+
+
+
+    }
+
+    @media (min-width:768px) and (max-width:979px) {
+        #main {
+            margin: auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+        .content{
+            padding: 0px !important;
+        }
+    }
+
+
+
+
+
+
+
+    .footer a {
+        color: #e94290;
+    }
+
+
+    .timeline-Header {
+        padding: 0px;
+    }
+
+    select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+        border-radius: 4px;
+        color: #555;
+        display: inline-block;
+        font-size: 14px;
+        height: 32px !important;
+        line-height: 32px !important;
+    }
+    .wizard-cards .row-item{width:98%;line-height:30px;border-top:1px solid #CCC;}
+    .confirmar div:last-child{border-bottom:1px solid #CCC;}
+    .wizard-cards .row-item:last{border-bottom:1px solid #CCC;}
+    .wizard-cards .row-item label{width:40%;float:left;}
+    .wizard-cards .row-item em{width:60%;}
+    .wizad-result{
+        min-height:200px; max-height:200px;
+        border:1px solid #BEBEBE;
+        margin-bottom:20px;
+        -webkit-box-shadow: 3px 3px 6px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow:    3px 3px 6px rgba(50, 50, 50, 0.75);
+        box-shadow:         3px 3px 6px rgba(50, 50, 50, 0.75);
+        overflow:auto;
+    }
+    table tr th, table tr td {
+        padding: 7px 15px;
+    }
+    table tr td, table tr th {
+        border-bottom: 1px solid #ebebeb;
+    }
+    .help-block{ font-size:11px;}
+    #CORREO{width:270px}
+
+    #map_canvas {
+        height: 400px;
+        width: 100%;
+       }
+
+
+       .wrapper-cell {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+@-webkit-keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+.animated-background, .image, .text-line {
+  -webkit-animation-duration: 1.25s;
+          animation-duration: 1.25s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: placeHolderShimmer;
+          animation-name: placeHolderShimmer;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  background: #F6F6F6;
+  background: linear-gradient(to right, #F6F6F6 8%, #F0F0F0 18%, #F6F6F6 33%);
+  background-size: 800px 104px;
+  height: 96px;
+  position: relative;
+}
+
+.image {
+     height: 250px;
+     width: 100%;
+}
+
+.text {
+  margin-left: 20px;
+}
+
+.text-line {
+  height: 10px;
+  width: 230px;
+  margin: 4px 0;
+}
+</style>
+  </head>
+  <body>
+    <!-- Status bar overlay for full screen mode (PhoneGap/Cordova) -->
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+    <div class="panel panel-left panel-cover">
+      <div class="panel-content">
+        <div class="panel-profile">
+          <div class="panel-profile-avatar"><img alt="" src="img/logo_api.png"></div>
+          <div class="panel-profile-author">
+            <div class="panel-profile-name" >Bienvenido</div>
+            <div class="panel-profile-description" style="font-size: 10px;" id="username_menu">Inicia Sesión</div>
+          </div>
+        </div>
+        <div class="list-block accordion-list panel-menu">
+          <ul>
+            <li>
+              <a href="cruceros.html" class="item-content item-link close-panel">
+                <div class="item-inner">
+                  <div class="item-title"><i class="icon ion-calendar"></i>Arribo de cruceros</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="tipo_cruce.html" class="item-content item-link close-panel">
+                <div class="item-inner">
+                  <div class="item-title"><i class="icon ion-clock"></i>Horarios de cruce</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="puertos_list.html" class="item-content item-link close-panel">
+                <div class="item-inner">
+                  <div class="item-title"><i class="icon ion-android-boat"></i>Puertos</div>
+                </div>
+              </a>
+            </li>
+            <!--
+            <li>
+              <a href="register.html" class="item-content item-link close-panel">
+                <div class="item-inner">
+                  <div class="item-title"><i class="icon ion-android-boat"></i>Registro*</div>
+                </div>
+              </a>
+            </li>
+          -->
+           <!-- <li>
+              <a href="puertos_list.html" class="item-content item-link close-panel">
+                <div class="item-inner">
+                  <div class="item-title"><i class="icon ion-ios-partlysunny"></i>Boletín Meteorologico</div>
+                </div>
+              </a>
+            </li>-->
+            <li>
+              <a href="#" id="logout" class="item-content item-link close-panel">
+                <div class="item-inner">
+                  <div class="item-title"><i class="icon ion-android-exit"></i>Cerrar Sesión</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" id="login" class="item-content item-link close-panel">
+                <div class="item-inner">
+                  <div class="item-title"><i class="icon ion-android-exit"></i>Iniciar Sesión</div>
+                </div>
+              </a>
+            </li>
+
+            
+            
+            
+            
+          </ul>
+        </div>
+        <div class="panel-line"></div>
+        <div class="panel-social-networks">
+          
+        </div>
+      </div>
+    </div>
+    <div class="views">
+      <div class="view view-main">
+        <div class="pages navbar-fixed">
+          <div class="page" data-page="index">
+            <!-- Navbar -->
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="left">
+                    <a href="#" class="link open-panel"><i class="icon ion-android-menu"></i></a>
+                </div>
+                <div class="center">Inicio</div>
+              </div>
+            </div>
+            <!-- Scrollable page content -->
+            <div class="page-content infinite-scroll" data-distance="100">
+            
+              <ul class="post-list header-1" id="news">
+              
+                              
+
+              </ul>
+              <!-- Preloader -->
+              <div class="infinite-scroll-preloader">
+                <div class="preloader"></div>
+              </div>
+            </div>
+              <!-- login -->
+            <div class="login-screen">
+        <div class="view">
+          <div class="page">
+            <div class="page-content login-screen-content" >
+              <center style="background-color: #00a4c4;"><img class="contact-img" style="height: 40%; width: 50%;" src="img/logo-blanco.png" alt=""></center>
+              
+             
+              <form style="margin-top: 15%;">
+                <div class="list-block">
+                  <ul>
+                    <li class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title label">Correo</div>
+                        <div class="item-input">
+                          <input type="text" name="username" id="username" placeholder="Ingresa tu correo electrónico">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="item-content">
+                      <div class="item-inner">
+                        <div class="item-title label">Contraseña</div>
+                        <div class="item-input">
+                          <input type="password" name="password" id="password" placeholder="Ingresa tu contraseña">
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="list-block">
+                  <center>
+                    <ul>
+                    <li><a href="#" id="btn_login" class="button button-fill" style="color: white !important;text-shadow: none !important;     background-color: #00a4c4; font-size: 16px;">Entrar</a></li>
+                  </ul>
+                  </center>
+                 
+                  <div class="list-block-label" style=" bottom:0px; ">
+                    
+                    <p>¿No tienes cuenta?</p>
+                    <p><a href="register.html" style="color: #e94492;" class="close-login-screen" >Registrate</a></p>
+
+                  </div>
+              
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div><!-- end login -->
+      <!--  register pop up  -->
+      <div class="popup popup-register">
+        <div class="block">
+          <p>About</p>
+          <!-- Close Popup -->
+          <p><a class="link popup-close" href="#">Close popup</a></p>
+          <p>Lorem ipsum dolor sit amet...</p>
+        </div>
+      </div>
+      <!--  end register pop up  -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="cordova.js" type="text/javascript">
+      </script>
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCX5oI4p0_r-rEf3g3PverMblYFkaePUlg&callback=initMap"
+    async defer></script>
+    <script type="text/javascript" src="js/dialogs_cordova.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/registroController.js"></script>
+    <script type="text/javascript" src="js/puertoslistController.js"></script>
+    <script type="text/javascript" src="js/postController.js"></script>
+    <script type="text/javascript" src="js/arribosController.js"></script>
+    <script type="text/javascript" src="js/puertodetailController.js"></script>
+    <script type="text/javascript" src="js/RutaController.js"></script>
+    <script type="text/javascript" src="js/NavieraController.js"></script>
+    <script type="text/javascript" src="js/HorariosController.js"></script>
+    
+    
+  </body>
+</html>

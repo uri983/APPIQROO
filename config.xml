@@ -29,10 +29,6 @@
     </platform>
     <preference name="DisallowOverscroll" value="true" />
     <preference name="phonegap-version" value="cli-8.0.0" />
-    <plugin name="cordova-plugin-spinner" spec="~1.1.0" />
-    <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
-    <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
-    <plugin name="cordova-plugin-x-socialsharing" spec="~5.3.2" />
     <platform name="android">
         <icon density="ldpi" src="res/icons/android/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="res/icons/android/drawable-mdpi-icon.png" />
@@ -81,8 +77,14 @@
         <splash height="960" platform="ios" src="res/screens/ios/Default@2x~iphone.png" width="640" />
         <splash height="480" platform="ios" src="res/screens/ios/Default~iphone.png" width="320" />
     </platform>
+    <engine name="browser" spec="^5.0.3" />
+    <engine name="android" spec="^6.3.0" />
+    <plugin name="cordova-plugin-spinner" spec="~1.1.0" />
+    <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
+    <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
+    <plugin name="cordova-plugin-x-socialsharing" spec="~5.3.2" />
     <plugin name="cordova-plugin-awesome-shared-preferences" spec="^0.1.0" />
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
     <plugin name="cordova-plugin-dialogs" spec="^2.0.1" />
-    <engine name="browser" spec="~5.0.3" />
+    <engine name="ios" spec="~4.5.4" />
 </widget>

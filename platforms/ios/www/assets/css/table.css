@@ -1,0 +1,582 @@
+
+
+
+
+.bordered {
+    border-spacing: 0;
+	border: 1px solid #D3D3D3;
+    /*border: 1px solid #CCCCCC;*/
+    border-radius: 6px 6px 6px 6px;
+    /*box-shadow: 0 1px 1px #CCCCCC;*/
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	width:100%;
+	
+   /* margin: 20px auto 0;*/
+    overflow: hidden;
+	/*//margin-left:40px;*/
+	font-size:12px;
+}
+
+.bordered caption {
+    color: #999999;
+    font-style: italic;
+}
+
+.bordered tr:hover {
+    -moz-transition: all 0.1s ease-in-out 0s;
+    background: none repeat scroll 0 0 #FBF8E9;
+}
+.bordered td, .bordered th {
+    border-left: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    padding: 5px;
+    text-align: left;
+}
+.bordered th {
+    background-color: #497EAC;
+    background-image: -moz-linear-gradient(center top , #6BA0CE, #497EAC);
+    border-bottom: 1px solid #467CAD;
+	
+	color: #FFFFFF;
+    text-shadow: 0 1px 0 #104266;
+	font-family: "Tahoma","Lucida Grande",sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 18px;
+	opacity: 0.9;	
+	
+	/*background-color: #DCE9F9;
+    background-image: -moz-linear-gradient(center top , #EBF3FC, #DCE9F9);
+    border-top: medium none;*/
+    /*box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	 text-shadow: 1px 1px 1px #FFFFFF;*/
+	 /*font:10px;*/
+	 padding: 10px;
+}
+
+
+.subheader {
+    background: url("../images/nav_secondary_bg.png") repeat scroll 0 0 transparent;
+    height: 100%;
+	text-align:center !important;
+	
+	 border-bottom: 1px solid #DFDFDF;
+    border-top: 1px solid #FFFFFF;
+	
+    color: #8A8A8A;
+    font-family: "Tahoma","Lucida Grande",sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 18px;
+    padding: 2px;
+}
+
+
+
+
+table{
+	font-size:90%;
+}
+
+.bordered td:first-child, .bordered th:first-child {
+    border-left: medium none;
+}
+.bordered th:first-child {
+    border-radius: 6px 0 0 0;
+}
+.bordered th:last-child {
+    border-radius: 0 6px 0 0;
+}
+.bordered th:only-child {
+    border-radius: 6px 6px 0 0;
+}
+.bordered tr:last-child td:first-child {
+    border-radius: 0 0 0 6px;
+}
+.bordered tr:last-child td:last-child {
+    border-radius: 0 0 6px 0;
+}
+
+.bordered td a{
+	cursor:pointer;
+	text-decoration:underline;
+}
+
+.bordered span.headText {
+    font-size: 18px;
+}
+
+.zebra td, .zebra th {
+    border-bottom: 1px solid #F2F2F2;
+    padding: 10px;
+}
+.zebra tbody tr:nth-child(2n) {
+    background: none repeat scroll 0 0 #F5F5F5;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+}
+.zebra th {
+    background-color: #EEEEEE;
+    background-image: -moz-linear-gradient(center top , #F5F5F5, #EEEEEE);
+    border-bottom: 1px solid #CCCCCC;
+    text-align: left;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.zebra th:first-child {
+    border-radius: 6px 0 0 0;
+}
+.zebra th:last-child {
+    border-radius: 0 6px 0 0;
+}
+.zebra th:only-child {
+    border-radius: 6px 6px 0 0;
+}
+.zebra tfoot td {
+    background-color: #F1F1F1;
+    border-bottom: 0 none;
+    border-top: 1px solid #FFFFFF;
+}
+.zebra tfoot td:first-child {
+    border-radius: 0 0 0 6px;
+}
+.zebra tfoot td:last-child {
+    border-radius: 0 0 6px 0;
+}
+.zebra tfoot td:only-child {
+    border-radius: 0 0 6px 6px;
+}
+
+
+/*
+Table Style - This is what you want
+http://johnsardine.com/freebies/dl-html-css/simple-little-tab/
+------------------------------------------------------------------ */
+table.table a:link {
+	color: #666;
+	font-weight: bold;
+	text-decoration:none;
+}
+table.table a:visited {
+	color: #999999;
+	font-weight:bold;
+	text-decoration:none;
+}
+table.table a:active,
+table.table a:hover {
+	color: #bd5a35;
+	text-decoration:underline;
+}
+table.table {
+	font-family:Arial, Helvetica, sans-serif;
+	color:#666;
+	font-size:95%;
+	text-shadow: 1px 1px 0px #fff;
+	background:#eaebec;
+	margin:20px;
+	border:#ccc 1px solid !important;
+	width:100%;
+
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+
+	-moz-box-shadow: 0 1px 2px #d1d1d1;
+	-webkit-box-shadow: 0 1px 2px #d1d1d1;
+	box-shadow: 0 1px 2px #d1d1d1;
+}
+table.table th {
+	padding:21px 25px 22px 25px;
+	border-top:1px solid #fafafa;
+	border-bottom:1px solid #e0e0e0;
+
+	background: #ededed;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0fb8b4), to(#11B2B8));
+	background: -moz-linear-gradient(top, #0fb8b4, #11B2B8);
+}
+table.table th:first-child{
+	text-align: left;
+	padding-left:20px;
+}
+table.table tr:first-child th:first-child{
+	-moz-border-radius-topleft:3px;
+	-webkit-border-top-left-radius:3px;
+	border-top-left-radius:3px;
+}
+table.table tr:first-child th:last-child{
+	-moz-border-radius-topright:3px;
+	-webkit-border-top-right-radius:3px;
+	border-top-right-radius:3px;
+}
+table.table tr{
+	text-align: center;
+	padding-left:20px;
+}
+table.table tr td:first-child{
+	text-align: left;
+	padding-left:20px;
+	border-left: 0;
+}
+table.table tr td {
+	padding:8px;
+	border-top: 1px solid #ffffff;
+	border-bottom:1px solid #e0e0e0;
+	border-left: 1px solid #e0e0e0;
+	
+	background: #fafafa;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+	background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
+}
+table.table tr.even td{
+	background: #f6f6f6;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
+	background: -moz-linear-gradient(top,  #f8f8f8,  #f6f6f6);
+}
+table.table tr:last-child td{
+	border-bottom:0;
+}
+table.table tr:last-child td:first-child{
+	-moz-border-radius-bottomleft:3px;
+	-webkit-border-bottom-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+table.table tr:last-child td:last-child{
+	-moz-border-radius-bottomright:3px;
+	-webkit-border-bottom-right-radius:3px;
+	border-bottom-right-radius:3px;
+}
+table.table tr:hover td{
+	background: #f2f2f2;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
+	background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);	
+}
+
+.columnwidthbig {
+    color:#fff;
+    background-color: #11B2B8;
+    background-image: -webkit-linear-gradient(top, #0fb8b4, #11B2B8);
+    background-image: -moz-linear-gradient(top, #0fb8b4, #11B2B8);
+    background-image: -o-linear-gradient(top, #0fb8b4, #11B2B8);
+    background-image: -ms-linear-gradient(top, #0fb8b4, #11B2B8);
+    background-image: linear-gradient(top, #0fb8b4, #11B2B8);
+    text-shadow: 1px 1px 5px #000;
+    height: 40px;
+}
+
+
+
+/*
+Table Style - This is what you want
+http://dev.opera.com/articles/view/19-html-tables/
+------------------------------------------------------------------ */
+.colored {
+    background-color: #B7C5D4;
+	border-spacing: 1px;
+}
+.colored th {
+    background: none repeat scroll 0 0 #B7C5D4;
+    text-align: left;
+}
+.colored tr:nth-child(2n+1) {
+    background-color: #FFFFFF;
+}
+.colored tr:nth-child(2n) {
+    background-color: #F0F0F0;
+}
+
+.colored td {
+    padding: 6px;
+    vertical-align: top;
+}
+
+
+
+/*
+Table Style - This is what you want
+Para los albunes
+------------------------------------------------------------------ */
+table.talbum {
+	border:none;
+    border-radius: 0px 0px 0px 0px;
+    box-shadow: none;
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+    font-size: 11px;
+}
+table.talbum td.album div {
+    background: none repeat scroll 0 0 transparent !important;
+    border: 1px solid #000000;
+    display: block;
+    height: 100px;
+    padding: 2px !important;
+    width: 120px;
+}
+
+
+table.talbum td.album{
+    width: 130px;
+}
+table.talbum td.album div img {
+    display: block;
+    width: 120px;
+}
+
+
+table.talbum td.album div {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #EEEEEE;
+    border-image: none;
+    border-style: solid;
+    border-width: 5px 5px 16px;
+    box-shadow: 2px 2px 3px #333333;
+    display: block;
+    line-height: 0;
+    padding: 2px;
+}
+
+table.talbum td.binfo {
+	text-align:left;
+	vertical-align:top;	
+}
+
+table.talbum td.binfo .photoDate {
+	text-align:left;
+	vertical-align:top;	
+}
+table.talbum td.binfo .photoText {
+	text-align:left;
+	vertical-align:top;	
+}
+table.talbum td.binfo .photoTextSubtitle {
+	text-align:left;
+	vertical-align:top;	
+	color: gray;
+}
+
+
+
+
+
+
+.box {
+    background: none repeat scroll 0 0 #FAFAFA;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 16px;
+}
+
+.box-header {
+    background-color: #E5E5E5;
+    background-image: -moz-linear-gradient(center top , #EBEBEB, #E5E5E5);
+    border-top: 1px solid #FAFAFA;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    height: 40px;
+}
+
+
+.box-header h1 {
+    color: #898989;
+    float: left;
+    font-family: "Tahoma","Lucida Grande",sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 40px;
+    padding-left: 14px;
+    text-shadow: 0 1px 0 #FFFFFF;
+    text-transform: uppercase;
+}
+
+.box-content{
+	padding-left:20px;
+}
+
+.action_bar {
+    background: url("../images/action_bar_bg.png") repeat-x scroll 0 0 #E8E8E8;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 7px 14px 7px 8px;
+}
+
+
+
+.box-header .glyph {
+    float: left;
+    font-size: 16px;
+    line-height: 40px;
+    margin-right: -3px;
+    padding-left: 14px;
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+.glyph {
+    font-family: 'Pictos';
+    text-transform: none;
+}
+
+.form-label {
+    border-top: 1px solid #FFFFFF;
+    display: block;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 20px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 0 1px 0 #FFFFFF;
+    white-space: nowrap;
+    width: 35%;
+}
+
+.form-input {
+    display: block;
+    float: right;
+    width: 65%;
+}
+
+.button.small {
+    font-size: 10px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 10px;
+}
+
+input.button, .button {
+    background: url("../images/buttongray_bg.png") repeat-x scroll 0 0 #EBEBEB ;
+    border: 1px solid #C4C4C4 !important;
+    border-radius: 3px 3px 3px 3px !important;
+    box-shadow: 0 1px 3px #DDDDDD !important;
+    color: #757575 !important;
+    display: inline-block !important;
+    font-family: "Tahoma",sans-serif ;
+    font-size: 11px !important;
+    font-weight: bold !important;
+    height: 31px !important;
+    line-height: 31px !important;
+    margin-right: 4px !important;
+    padding: 0 14px !important;
+    text-decoration: none !important;
+    text-shadow: 0 1px 0 #FFFFFF !important;
+    text-transform: uppercase;
+}
+
+.table-title{
+ 	color: #727272;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+}
+	
+/*
+.table1 table {
+    background: none repeat scroll 0 0 #FEFEFE;
+    border: 1px solid #D3D3D3;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    margin: 5% auto 0;
+    overflow: hidden;
+    width: 70%;
+}
+.table1 th, td {
+    padding: 8px 28px;
+    text-align: center;
+}
+.table1 th {
+    background: none repeat scroll 0 0 #E8EAEB;
+    padding-top: 22px;
+    text-shadow: 1px 1px 1px #FFFFFF;
+}
+.table1 td {
+    border-right: 1px solid #E0E0E0;
+    border-top: 1px solid #E0E0E0;
+}
+.table1 tr.odd-row td {
+    background: none repeat scroll 0 0 #F6F6F6;
+}
+.table1 td.first, th.first {
+    text-align: left;
+}
+.table1 td.last {
+    border-right: medium none;
+}
+.table1 td {
+    background: -moz-linear-gradient(100% 25% 90deg, #FEFEFE, #F9F9F9) repeat scroll 0 0 transparent;
+}
+.table1 tr.odd-row td {
+    background: -moz-linear-gradient(100% 25% 90deg, #F6F6F6, #F1F1F1) repeat scroll 0 0 transparent;
+}
+.table1 th {
+    background: -moz-linear-gradient(100% 20% 90deg, #E8EAEB, #EDEDED) repeat scroll 0 0 transparent;
+}
+.table1 tr:first-child th.first {
+    border-top-left-radius: 5px;
+}
+.table1 tr:first-child th.last {
+    border-top-right-radius: 5px;
+}
+.table1 tr:last-child td.first {
+    border-bottom-left-radius: 5px;
+}
+.table1 tr:last-child td.last {
+    border-bottom-right-radius: 5px;
+}*/
+
+
+
+
+@media only screen and (max-width: 800px) {
+    
+    /* Force table to not be like tables anymore */
+	#no-more-tables table, 
+	#no-more-tables thead, 
+	#no-more-tables tbody, 
+	#no-more-tables th, 
+	#no-more-tables td, 
+	#no-more-tables tr { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	#no-more-tables thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+ 
+	#no-more-tables tr { border: 1px solid #ccc; }
+ 
+	#no-more-tables td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 35%; 
+		white-space: normal;
+		text-align:left;
+		font-size:95%;
+	}
+	#no-more-tables td img{
+		text-align:left;
+	}
+ 
+	#no-more-tables td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 35%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+ 
+	/*
+	Label the data
+	*/
+	#no-more-tables td:before { content: attr(data-title); }
+}
+
+

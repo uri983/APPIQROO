@@ -1,0 +1,167 @@
+<div class="pages">
+    <div data-page="puerto_detail" class="page">
+        <div class="navbar">
+              <div class="navbar-inner">
+                <div class="left">
+                <a href="#"  class="back link">
+                    <i class="icon ion-chevron-left"></i>
+                                 
+                </a>
+              </div>
+                <div class="center">Detalles del puerto</div>
+              </div>
+        </div>
+        <div class="page-content">
+          <div class="profile-image" id="port_img">
+            <div class="wrapper">
+            <div class="wrapper-cell">
+              <div class="image"></div>
+            
+            </div>
+          </div>
+          
+        </div>
+        <div class="content-block-title" id="port_name" style="font-size: 17px;">Puerto Juarez</div>
+        
+        
+        
+        <div class="list-block media-list profile">
+          <ul>
+            <li>
+              <a href="#" class="item-link item-content">
+                <div class="item-media" id="port_status_icon"></div>
+                  <div class="item-inner">
+                    <div class="item-title" id="port_status">
+                      
+                    </div>
+                  <div class="item-subtitle" id="port-flag-description"></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item-link item-content">
+                <div class="item-media"><i class="icon ion-android-call"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <div class="item-title" id="port_phone">Cargando...</div>
+                    </div>
+                  <div class="item-subtitle">Telefono</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item-link item-content">
+                <div class="item-media"><i class="icon ion-ios-information"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <div class="item-title">Reseña</div>
+                    </div>
+                  <div class="item-subtitle" id="port_text" style="white-space: initial;     text-align: justify;">
+                    Cargando...
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item-link item-content">
+                <div class="item-media"><i class="icon ion-android-home"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <div class="item-title" style="white-space: initial;" id="port_address" >Cargando...</div>
+                    </div>
+                  <div class="item-subtitle">Dirección</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item-link item-content">
+                <div class="item-media"><i class="icon ion-android-time"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <div class="item-title">Horarios</div>
+                    </div>
+                  <div class="item-subtitle" id="port_horario">Cargando...</div>
+                </div>
+              </a>
+            </li>
+             <li>
+              <a href="#" class="item-link item-content">
+                <div class="item-media"><i class="icon ion-ios-location"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <div class="item-title">Como llegar</div>
+                    </div>
+                  <div class="item-subtitle"><div id="map_canvas"></div></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item-link item-content">
+                <div class="item-media"><i class="icon ion-ios-star"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">
+                      <div class="item-title">Servicios</div>
+                    </div>
+                  <div class="item-subtitle"><div></div></div>
+                </div>
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+           
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+var map;
+document.addEventListener("deviceready", function() {
+  var div = document.getElementById("map_canvas");
+
+  // Initialize the map view
+  map = plugin.google.maps.Map.getMap(div);
+
+  // Wait until the map is ready status.
+  map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
+}, false);
+
+function onMapReady() {
+  var button = document.getElementById("button");
+  button.addEventListener("click", onButtonClick);
+}
+
+function onButtonClick() {
+
+  // Move to the position with animation
+  map.animateCamera({
+    target: {lat: 37.422359, lng: -122.084344},
+    zoom: 17,
+    tilt: 60,
+    bearing: 140,
+    duration: 5000
+  }, function() {
+
+    // Add a maker
+    map.addMarker({
+      position: {lat: 37.422359, lng: -122.084344},
+      title: "Welecome to \n" +
+             "Cordova GoogleMaps plugin for iOS and Android",
+      snippet: "This plugin is awesome!",
+      animation: plugin.google.maps.Animation.BOUNCE
+    }, function(marker) {
+
+      // Show the info window
+      marker.showInfoWindow();
+
+      // Catch the click event
+      marker.on(plugin.google.maps.event.INFO_CLICK, function() {
+
+        // To do something...
+        alert("Hello world!");
+
+      });
+    });
+  });
+}
+</script>
