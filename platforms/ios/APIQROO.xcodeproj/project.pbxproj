@@ -25,7 +25,6 @@
 		6B6665502C1C402782FE2ED5 /* NSString+SSURLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2C53D641C8416791994072 /* NSString+SSURLEncoding.m */; };
 		8F9B3E8FB49D43E1BF105DC4 /* CDVNotification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3D752371C1B5407A890296F5 /* CDVNotification.bundle */; };
 		98EFD1BB7D184A509DFFECB0 /* NSUserDefaults+CDVSharedPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0AF0E1E5D343869DEEBAB3 /* NSUserDefaults+CDVSharedPreferences.m */; };
-		AD5A7CB120BA233400A3E3DE /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = AD5A7CB020BA233400A3E3DE /* AppIcon.appiconset */; };
 		AD5A7CB320BA237D00A3E3DE /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD5A7CB220BA237D00A3E3DE /* Images-2.xcassets */; };
 		AE59CB05AB854708A25442F5 /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = FE660D0E5640419F920317E0 /* CDVNotification.m */; };
 		AFC206EB824749FCA0092E75 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 145693B9076D449491055B1C /* CDVSplashScreen.m */; };
@@ -92,7 +91,6 @@
 		8D1107310486CEB800E47090 /* APIQROO-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "APIQROO-Info.plist"; path = "APIQROO/APIQROO-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = SOURCE_ROOT; };
 		A1AF4FB5ABD642689D45C997 /* SocialSharing.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = SocialSharing.h; path = "cordova-plugin-x-socialsharing/SocialSharing.h"; sourceTree = "<group>"; };
 		A1CAC131E85546EB8066879F /* MBProgressHUD.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = "cordova-plugin-spinner/MBProgressHUD.m"; sourceTree = "<group>"; };
-		AD5A7CB020BA233400A3E3DE /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AppIcon.appiconset; path = "../../../../../../../Desktop/logo ios/ios/AppIcon.appiconset"; sourceTree = "<group>"; };
 		AD5A7CB220BA237D00A3E3DE /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Images-2.xcassets"; path = "APIQROO/Images-2.xcassets"; sourceTree = SOURCE_ROOT; };
 		E0F7A7F202C74D6985927847 /* CDVStatusBar.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVStatusBar.h; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; };
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
@@ -173,7 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				AD5A7CB220BA237D00A3E3DE /* Images-2.xcassets */,
-				AD5A7CB020BA233400A3E3DE /* AppIcon.appiconset */,
 				0207DA571B56EA530066E2B4 /* Images.xcassets */,
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* APIQROO-Info.plist */,
@@ -334,7 +331,6 @@
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
-				AD5A7CB120BA233400A3E3DE /* AppIcon.appiconset in Resources */,
 				8F9B3E8FB49D43E1BF105DC4 /* CDVNotification.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
