@@ -8,8 +8,11 @@
     <title>APIQROO</title>
     <link rel="stylesheet" href="css/framework7.material.min.css">
     <link rel="stylesheet" href="css/framework7.material.colors.min.css">
+
     <link rel="stylesheet" href="css/ionicons.min.css">
     <link rel="stylesheet" href="css/style.css">
+
+
 
     <!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
 
@@ -511,6 +514,14 @@ h3 {padding: 0; margin: 0;}
   width: 230px;
   margin: 4px 0;
 }
+
+.api-color{
+  color:#00a4c4 !important;
+}
+
+
+
+
 </style>
   </head>
   <body>
@@ -528,6 +539,13 @@ h3 {padding: 0; margin: 0;}
         </div>
         <div class="list-block accordion-list panel-menu">
           <ul>
+            <li>
+              <a href="noticias.html" class="item-content item-link close-panel">
+                <div class="item-inner">
+                  <div class="item-title"><i class="icon ion-ios-paper"></i>Noticias</div>
+                </div>
+              </a>
+            </li>
             <li>
               <a href="cruceros.html" class="item-content item-link close-panel">
                 <div class="item-inner">
@@ -595,7 +613,7 @@ h3 {padding: 0; margin: 0;}
     <div class="views">
       <div class="view view-main">
         <div class="pages navbar-fixed">
-          <div class="page" data-page="index">
+          <div class="page" style="background: #f8f8f8;" data-page="index">
             <!-- Navbar -->
             <div class="navbar">
               <div class="navbar-inner">
@@ -607,16 +625,71 @@ h3 {padding: 0; margin: 0;}
             </div>
             <!-- Scrollable page content -->
             <div class="page-content infinite-scroll" data-distance="100">
-            
-              <ul class="post-list header-1" id="news">
-              
-                              
 
-              </ul>
-              <!-- Preloader -->
-              <div class="infinite-scroll-preloader">
-                <div class="preloader"></div>
+            <img src="img/banner.jpg" alt="" class="full-width">
+            
+            
+          <!-- tarjeta --> 
+          <div  class="card card-header-pic">
+            <div class="card-content">
+              <div class="card-content-inner">
+                
+              
+                  <h3 class="api-color"> Programación de arribos de cruceros </h3>
+                  <p>Mantente informado de los proximos arribos de cruceros a las costas de Quintana Roo.</p>
+               
+                
+                
               </div>
+            </div>
+            <div class="card-footer">
+               <a href="#" class="link"></a>
+              <a href="cruceros.html" class="link api-color">Ver más</a>
+            </div>
+          </div>
+         <!-- end tarjeta --> 
+         <!-- tarjeta --> 
+          <div  class="card card-header-pic">
+            <div class="card-content">
+              <div class="card-content-inner">
+                <h3 class="api-color"> Horarios de cruce </h3>
+                <p>Consulta los horarios de cruce entre los distintos puertos del estado.</p>
+              </div>
+            </div>
+            <div class="card-footer">
+               <a href="#" class="link"></a>
+              <a href="tipo_cruce.html" class="link api-color">Ver más</a>
+            </div>
+          </div>
+         <!-- end tarjeta --> 
+         <!-- tarjeta --> 
+          <div  class="card card-header-pic">
+            <div class="card-content">
+              <div class="card-content-inner">
+                <h3 class="api-color"> Noticias </h3>
+                <p>Conoce las ultimas noticias y el diario aconteser en los puertos de Quintana Roo.</p>
+              </div>
+            </div>
+            <div class="card-footer">
+               <a href="#" class="link"></a>
+              <a href="noticias.html" class="link api-color">Ver más</a>
+            </div>
+          </div>
+         <!-- end tarjeta -->
+          <!-- tarjeta --> 
+          <div  class="card card-header-pic">
+            <div class="card-content">
+              <div class="card-content-inner">
+                <h3 class="api-color"> Puertos </h3>
+                <p>Estados del puerto,ubicación e información general de los puertos.</p>
+              </div>
+            </div>
+            <div class="card-footer">
+               <a href="#" class="link"></a>
+              <a href="puertos_list.html" class="link api-color">Ver más</a>
+            </div>
+          </div>
+         <!-- end tarjeta -->
             </div>
               <!-- login -->
             <div class="login-screen">
@@ -689,6 +762,7 @@ h3 {padding: 0; margin: 0;}
     <script type="text/javascript" src="js/framework7.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCX5oI4p0_r-rEf3g3PverMblYFkaePUlg&callback=initMap"
     async defer></script>
+    <script src="js/Owlcarousel/dist/owl.carousel.min.js"></script>
     <script type="text/javascript" src="js/dialogs_cordova.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/registroController.js"></script>

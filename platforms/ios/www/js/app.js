@@ -109,6 +109,15 @@ function onBackKeyDown() {
 
 app.onPageInit('index', function (page) {
   
+
+}).trigger();
+
+
+
+app.onPageInit('noticias', function (page) {
+
+
+  
   if(localStorage.user_mail == undefined){
     //app.loginScreen();
   } 
@@ -141,7 +150,7 @@ app.onPageInit('index', function (page) {
       var lastItemIndex = $$('#news li').length;
     }, 1000);
   });
-}).trigger();
+});
 
 
 

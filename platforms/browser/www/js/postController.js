@@ -30,9 +30,10 @@ function getNewsDetail(news_id){
                   var img = response[0].img.replace("dev.apiqroo.com.mx/v2017-v3", "www.apiqroo.com.mx");
                       img = img.replace("dev.apiqroo.com.mx/v2017", "www.apiqroo.com.mx");
                  
-                  var res = response[0].post_content.replace(/\[.*?\]\s?/g, '')
+                  var res = response[0].post_content.replace(/\[.*?\]\s?/g, '');
+
                   $('.post-date').html(response[0].post_date);
-                  $('#post-content').html(jQuery(res).text());
+                  $('#post-content').html(response[0].post_content);
                   $('#post-title').html(response[0].post_title);
                   //$("#post-img").attr("src",img);
 
