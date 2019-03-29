@@ -45,6 +45,9 @@
         },
         "cordova-plugin-dialogs": {
             "PACKAGE_NAME": "com.apiqroo.main.app"
+        },
+        "phonegap-plugin-push": {
+            "PACKAGE_NAME": "com.apiqroo.main.app"
         }
     },
     "dependent_plugins": {},
@@ -332,6 +335,22 @@
             "merges": [
                 "navigator.notification"
             ]
+        },
+        {
+            "file": "plugins/phonegap-plugin-push/www/push.js",
+            "id": "phonegap-plugin-push.PushNotification",
+            "pluginId": "phonegap-plugin-push",
+            "clobbers": [
+                "PushNotification"
+            ]
+        },
+        {
+            "file": "plugins/phonegap-plugin-push/www/browser/push.js",
+            "id": "phonegap-plugin-push.BrowserPush",
+            "pluginId": "phonegap-plugin-push",
+            "clobbers": [
+                "PushNotification"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -347,6 +366,7 @@
         "cordova-plugin-googlemaps": "2.2.9",
         "cordova-plugin-awesome-shared-preferences": "0.1.0",
         "cordova-plugin-splashscreen": "5.0.2",
-        "cordova-plugin-dialogs": "2.0.1"
+        "cordova-plugin-dialogs": "2.0.1",
+        "phonegap-plugin-push": "2.1.3"
     }
 }

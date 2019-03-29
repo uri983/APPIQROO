@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "514977557353",
+    "firebase_url": "https://appiqroo.firebaseio.com",
+    "project_id": "appiqroo",
+    "storage_bucket": "appiqroo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514977557353:android:d11f02849521c2c0",
+        "android_client_info": {
+          "package_name": "com.apiqroo.main.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "514977557353-90fi66vj593mam915qj42h105aigf7j4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZDrS4ssQKPOFoxbOpsyolNploUtGmryc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

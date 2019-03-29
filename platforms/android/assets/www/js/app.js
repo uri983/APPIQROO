@@ -40,6 +40,24 @@ $$(document).on('DOMContentLoaded', function (e) {
 
 $$(document).on('deviceready', function() {
 
+  var push = PushNotification.init({
+                android:{}
+            });
+
+            push.on('registration', function (data) {
+                // data.registrationId
+                //alert(data.registrationId);
+                console.log(data.registrationId);
+            });
+
+            push.on('notification', function (data) {
+                alert("Title:"+data.title+" Message:"+ data.message);
+            });
+
+            push.on('error', function (e) {
+                alert(e.message)
+            });
+
 
 
  

@@ -28,6 +28,7 @@
 		AE59CB05AB854708A25442F5 /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = FE660D0E5640419F920317E0 /* CDVNotification.m */; };
 		AFC206EB824749FCA0092E75 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 145693B9076D449491055B1C /* CDVSplashScreen.m */; };
 		B77C607635E64EE3834C4B1D /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = FF6EC222800B4C8982B41DBB /* CDVViewController+SplashScreen.m */; };
+		B13641AEC094499083D49C3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3C4456A10C4D7FB8098C12 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = APIQROO/config.xml; sourceTree = "<group>"; };
 		FE660D0E5640419F920317E0 /* CDVNotification.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVNotification.m; path = "cordova-plugin-dialogs/CDVNotification.m"; sourceTree = "<group>"; };
 		FF6EC222800B4C8982B41DBB /* CDVViewController+SplashScreen.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "CDVViewController+SplashScreen.m"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.m"; sourceTree = "<group>"; };
+		3B3C4456A10C4D7FB8098C12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; name = "GoogleService-Info.plist"; path = "GoogleService-Info.plist"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = text.plist.xml; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				8D1107310486CEB800E47090 /* APIQROO-Info.plist */,
 				6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */,
 				3D752371C1B5407A890296F5 /* CDVNotification.bundle */,
+				3B3C4456A10C4D7FB8098C12 /* GoogleService-Info.plist */,
 			);
 			name = Resources;
 			path = APIQROO/Resources;
@@ -331,6 +334,7 @@
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
 				8F9B3E8FB49D43E1BF105DC4 /* CDVNotification.bundle in Resources */,
+				B13641AEC094499083D49C3B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

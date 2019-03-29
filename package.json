@@ -15,7 +15,10 @@
       "cordova-plugin-x-socialsharing": {},
       "cordova-plugin-awesome-shared-preferences": {},
       "cordova-plugin-splashscreen": {},
-      "cordova-plugin-dialogs": {}
+      "cordova-plugin-dialogs": {},
+      "phonegap-plugin-push": {
+        "FCM_VERSION": "11.6.2"
+      }
     }
   },
   "dependencies": {
@@ -28,6 +31,7 @@
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-statusbar": "~1.0.1",
     "cordova-plugin-whitelist": "~1.2.0",
-    "cordova-plugin-x-socialsharing": "~5.3.2"
+    "cordova-plugin-x-socialsharing": "~5.3.2",
+    "phonegap-plugin-push": "^2.1.3"
   }
 }

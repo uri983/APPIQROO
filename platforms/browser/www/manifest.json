@@ -1,12 +1,1 @@
-{
-  "background_color": "#FFF",
-  "display": "standalone",
-  "name": "APIQROO",
-  "short_name": "APIQROO",
-  "version": "com.apiqroo.main.app",
-  "description": "Aplicación oficial de la APIQROO.",
-  "author": "Gerencia de Informática",
-  "icons": [],
-  "start_url": "index.html",
-  "theme_color": "#2196f3"
-}
+{"background_color":"#FFF","display":"standalone","name":"APIQROO","short_name":"APIQROO","version":"com.apiqroo.main.app","description":"Aplicación oficial de la APIQROO.","author":"Gerencia de Informática","icons":[],"start_url":"index.html","theme_color":"#2196f3","gcm_sender_id":"996231231186"}

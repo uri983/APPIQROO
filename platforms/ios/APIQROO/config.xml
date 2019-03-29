@@ -40,6 +40,9 @@
         <param name="ios-package" value="SocialSharing" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="PushNotification">
+        <param name="ios-package" value="PushPlugin" />
+    </feature>
     <name>APIQROO</name>
     <description>
         Aplicación oficial de la APIQROO.
@@ -83,6 +86,7 @@
     <splash height="1024" platform="ios" src="res/screens/ios/Default-Portrait~ipad.png" width="768" />
     <splash height="960" platform="ios" src="res/screens/ios/Default@2x~iphone.png" width="640" />
     <splash height="480" platform="ios" src="res/screens/ios/Default~iphone.png" width="320" />
+    <resource-file src="GoogleService-Info.plist" />
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="DisallowOverscroll" value="true" />

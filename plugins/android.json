@@ -27,6 +27,10 @@
     },
     "cordova-plugin-x-socialsharing": {
       "PACKAGE_NAME": "com.apiqroo.main.app"
+    },
+    "phonegap-plugin-push": {
+      "FCM_VERSION": "11.6.2",
+      "PACKAGE_NAME": "com.apiqroo.main.app"
     }
   },
   "dependent_plugins": {
