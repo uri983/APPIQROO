@@ -4,9 +4,9 @@
   "displayName": "APPIQROO",
   "cordova": {
     "platforms": [
-      "browser",
       "android",
-      "ios"
+      "ios",
+      "browser"
     ],
     "plugins": {
       "cordova-plugin-spinner": {},

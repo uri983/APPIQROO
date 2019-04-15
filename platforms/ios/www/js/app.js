@@ -51,12 +51,22 @@ $$(document).on('deviceready', function() {
             });
 
             push.on('notification', function (data) {
-                alert("Title:"+data.title+" Message:"+ data.message);
+                app.alert(data.message,data.title);
             });
 
             push.on('error', function (e) {
                 alert(e.message)
             });
+
+            push.subscribe(
+                'apiqroo-all-notification',
+                () => {
+                  console.log('success');
+                },
+                e => {
+                  console.log('error:', e);
+                }
+              );
 
 
 
